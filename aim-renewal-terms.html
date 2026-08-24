@@ -701,10 +701,26 @@ function extractRecords(callResult) {
   throw new Error("Unrecognized query result shape: " + JSON.stringify(p).slice(0, 300));
 }
 
+function describeServers(servers) {
+  // The mcp capability is manifest-scoped: listTools() only ever returns
+  // servers/tools this page's published capability manifest declared,
+  // intersected with what the current viewer actually connected. When a
+  // tool can't be found, dumping exactly what IS visible (rather than a
+  // generic message) tells us whether the manifest is missing the server
+  // entirely, has the wrong tool name(s), or the viewer just hasn't
+  // connected it — without needing browser dev tools.
+  if (!servers.length) return "(no connectors visible to this page)";
+  return servers.map(s =>
+    s.server + " [" + s.authStatus + "]: " +
+    ((s.tools || []).length ? s.tools.map(t => t.name).join(", ") : "(no tools visible to this page)")
+  ).join(" · ");
+}
+
 async function findQueryTool(mcp) {
   const listed = await mcp.listTools();
   const servers = listed.servers || [];
-  if (!servers.length) return { error: "server_not_connected" };
+  const diag = describeServers(servers);
+  if (!servers.length) return { error: "server_not_connected", diag };
 
   // The Salesforce connector may show up on its own, or nested under a
   // broader "Degreed Internal MCP" gateway alongside unrelated tools (Zendesk,
@@ -720,11 +736,8 @@ async function findQueryTool(mcp) {
     if (tool) return { serverName: server.server, toolName: tool.name };
   }
   const needsReauth = candidates.find(s => s.authStatus === "needs_reauth");
-  if (needsReauth) return { error: "needs_reauth", serverName: needsReauth.server };
-  return {
-    error: "tool_not_found",
-    available: candidates.flatMap(s => (s.tools || []).map(t => s.server + ": " + t.name))
-  };
+  if (needsReauth) return { error: "needs_reauth", serverName: needsReauth.server, diag };
+  return { error: "tool_not_found", diag };
 }
 
 async function runSoql(mcp, serverName, toolName, soql) {
@@ -769,7 +782,7 @@ async function refreshData() {
   }
   if (toolInfo.error === "server_not_connected") {
     status.className = "refresh-status is-error";
-    status.textContent = "Add the Salesforce connector (under Degreed Internal MCP) in claude.ai Settings → Connectors, then retry.";
+    status.textContent = "Add the Salesforce connector (under Degreed Internal MCP) in claude.ai Settings → Connectors, then retry. Visible to this page: " + toolInfo.diag;
     btn.disabled = false;
     return;
   }
@@ -781,7 +794,7 @@ async function refreshData() {
   }
   if (toolInfo.error === "tool_not_found") {
     status.className = "refresh-status is-error";
-    status.textContent = "No SOQL query tool found on the Salesforce connector. Available tools: " + toolInfo.available.join(", ");
+    status.textContent = "No SOQL query tool found. Visible to this page: " + toolInfo.diag + " — if a Salesforce query tool is listed there under a name this page doesn't recognize, share this message so it can be added.";
     btn.disabled = false;
     return;
   }
