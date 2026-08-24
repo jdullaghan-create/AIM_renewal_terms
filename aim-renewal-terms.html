@@ -1,0 +1,938 @@
+<title>AIM: Renewal Terms</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7;
+    --surface: #fcfcfb;
+    --surface-2: #f1f0eb;
+    --ink: #171410;
+    --ink-2: #55524a;
+    --muted: #8c8880;
+    --hairline: #e3e1d8;
+    --border: rgba(23,20,16,0.11);
+    --accent: #22304a;
+    --accent-strong: #16213a;
+    --accent-ink: #f7f7f5;
+    --gold: #a5761f;
+    --gold-bg: rgba(165,118,31,0.12);
+    --good: #0b8f0b;
+    --good-bg: rgba(11,143,11,0.11);
+    --critical: #c23434;
+    --critical-bg: rgba(194,52,52,0.10);
+    --warning: #a5720a;
+    --warning-bg: rgba(250,178,25,0.20);
+    --steady: #2a6fc4;
+    --steady-bg: rgba(42,111,196,0.10);
+    --shadow: 0 1px 2px rgba(23,20,16,0.04), 0 8px 24px -12px rgba(23,20,16,0.18);
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Consolas", "Liberation Mono", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --page: #0e0d0c;
+      --surface: #1a1917;
+      --surface-2: #232220;
+      --ink: #f3f1ec;
+      --ink-2: #c7c3b9;
+      --muted: #928f86;
+      --hairline: #322f2b;
+      --border: rgba(255,255,255,0.11);
+      --accent: #3d5074;
+      --accent-strong: #2c3c5a;
+      --accent-ink: #f3f1ec;
+      --gold: #d3a75c;
+      --gold-bg: rgba(211,167,92,0.15);
+      --good: #29b529;
+      --good-bg: rgba(41,181,41,0.14);
+      --critical: #e2645f;
+      --critical-bg: rgba(226,100,95,0.15);
+      --warning: #e2b04a;
+      --warning-bg: rgba(226,176,74,0.16);
+      --steady: #6da2e8;
+      --steady-bg: rgba(109,162,232,0.14);
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #0e0d0c;
+    --surface: #1a1917;
+    --surface-2: #232220;
+    --ink: #f3f1ec;
+    --ink-2: #c7c3b9;
+    --muted: #928f86;
+    --hairline: #322f2b;
+    --border: rgba(255,255,255,0.11);
+    --accent: #3d5074;
+    --accent-strong: #2c3c5a;
+    --accent-ink: #f3f1ec;
+    --gold: #d3a75c;
+    --gold-bg: rgba(211,167,92,0.15);
+    --good: #29b529;
+    --good-bg: rgba(41,181,41,0.14);
+    --critical: #e2645f;
+    --critical-bg: rgba(226,100,95,0.15);
+    --warning: #e2b04a;
+    --warning-bg: rgba(226,176,74,0.16);
+    --steady: #6da2e8;
+    --steady-bg: rgba(109,162,232,0.14);
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --page: #f9f9f7;
+    --surface: #fcfcfb;
+    --surface-2: #f1f0eb;
+    --ink: #171410;
+    --ink-2: #55524a;
+    --muted: #8c8880;
+    --hairline: #e3e1d8;
+    --border: rgba(23,20,16,0.11);
+    --accent: #22304a;
+    --accent-strong: #16213a;
+    --accent-ink: #f7f7f5;
+    --gold: #a5761f;
+    --gold-bg: rgba(165,118,31,0.12);
+    --good: #0b8f0b;
+    --good-bg: rgba(11,143,11,0.11);
+    --critical: #c23434;
+    --critical-bg: rgba(194,52,52,0.10);
+    --warning: #a5720a;
+    --warning-bg: rgba(250,178,25,0.20);
+    --steady: #2a6fc4;
+    --steady-bg: rgba(42,111,196,0.10);
+  }
+
+  * { box-sizing: border-box; }
+  body { background: var(--page); color: var(--ink); font-family: var(--font-body); }
+  .wrap { max-width: 1360px; margin: 0 auto; padding: 0 24px 64px; }
+
+  /* ---------- masthead ---------- */
+  .masthead {
+    background: linear-gradient(155deg, var(--accent-strong), var(--accent));
+    color: var(--accent-ink);
+    padding: 40px 24px 34px;
+    margin-bottom: 28px;
+  }
+  .masthead-inner { max-width: 1360px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.11em; text-transform: uppercase; opacity: 0.72; margin: 0 0 10px; }
+  .masthead h1 { font-family: var(--font-display); font-weight: 500; font-size: 34px; line-height: 1.15; margin: 0 0 8px; text-wrap: balance; }
+  .masthead p { margin: 0; font-size: 14.5px; opacity: 0.82; max-width: 640px; line-height: 1.5; }
+  .masthead-meta { text-align: right; font-family: var(--font-mono); font-size: 12.5px; opacity: 0.78; line-height: 1.7; }
+  .masthead-meta b { color: var(--accent-ink); opacity: 1; font-weight: 600; }
+  .refresh-btn {
+    font-family: var(--font-body); font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 100px;
+    border: 1px solid rgba(247,247,245,0.35); background: rgba(247,247,245,0.08); color: var(--accent-ink);
+    cursor: pointer; margin-bottom: 8px; transition: background 0.15s ease;
+  }
+  .refresh-btn:hover:not(:disabled) { background: rgba(247,247,245,0.18); }
+  .refresh-btn:disabled { opacity: 0.55; cursor: default; }
+  .refresh-status { font-size: 11.5px; opacity: 0.75; margin-bottom: 10px; min-height: 14px; }
+  .refresh-status.is-error { color: #f3b6ae; opacity: 1; }
+  .refresh-status.is-ok { color: #a9e6a9; opacity: 1; }
+  #fiscalWindowLabel { opacity: 0.78; }
+
+  /* ---------- KPI band ---------- */
+  .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 28px; }
+  .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; box-shadow: var(--shadow); }
+  .kpi-label { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 8px; font-weight: 600; }
+  .kpi-value { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 25px; font-weight: 600; line-height: 1; margin: 0 0 6px; }
+  .kpi-sub { font-size: 12.5px; color: var(--ink-2); line-height: 1.4; }
+  .kpi-sub .delta-up { color: var(--good); }
+  .kpi-sub .delta-down { color: var(--critical); }
+  .kpi.accent-good .kpi-value { color: var(--good); }
+  .kpi.accent-critical .kpi-value { color: var(--critical); }
+
+  /* ---------- section titles ---------- */
+  .section-title { font-family: var(--font-display); font-size: 19px; font-weight: 500; margin: 0 0 4px; }
+  .section-sub { font-size: 13px; color: var(--muted); margin: 0 0 16px; }
+  section.block { margin-bottom: 32px; }
+
+  /* ---------- chart ---------- */
+  .chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; box-shadow: var(--shadow); }
+  .bar-row { display: grid; grid-template-columns: 190px 1fr 150px; align-items: center; gap: 14px; padding: 9px 0; }
+  .bar-row + .bar-row { border-top: 1px solid var(--hairline); }
+  .bar-label { font-size: 13.5px; font-weight: 600; display: flex; align-items: center; gap: 7px; }
+  .bar-dot { width: 9px; height: 9px; border-radius: 2px; flex: none; }
+  .bar-track { position: relative; height: 22px; background: var(--surface-2); border-radius: 5px; overflow: hidden; }
+  .bar-fill { position: absolute; inset: 0 auto 0 0; border-radius: 5px; transition: width 0.4s ease; }
+  .bar-figures { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 12.5px; text-align: right; color: var(--ink-2); white-space: nowrap; }
+  .bar-figures b { color: var(--ink); font-size: 13.5px; }
+
+  /* ---------- filters ---------- */
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 14px; box-shadow: var(--shadow); }
+  .filter-group { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .filter-group-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 600; margin-right: 2px; }
+  .chip-toggle {
+    font-family: var(--font-body); font-size: 12.5px; font-weight: 600; padding: 5px 11px; border-radius: 100px;
+    border: 1px solid var(--border); background: transparent; color: var(--ink-2); cursor: pointer; transition: all 0.15s ease;
+    line-height: 1.3;
+  }
+  .chip-toggle:hover { border-color: var(--muted); }
+  .chip-toggle.active { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .search-input {
+    font-family: var(--font-body); font-size: 13px; padding: 6px 12px; border-radius: 100px; border: 1px solid var(--border);
+    background: var(--surface-2); color: var(--ink); min-width: 220px; outline: none;
+  }
+  .search-input:focus { border-color: var(--accent); }
+  .reset-link { font-size: 12px; color: var(--muted); text-decoration: underline; cursor: pointer; background: none; border: none; font-family: var(--font-body); margin-left: auto; }
+  .reset-link:hover { color: var(--ink); }
+  .result-count { font-size: 12.5px; color: var(--muted); margin: 0 0 10px; }
+  .result-count b { color: var(--ink); font-family: var(--font-mono); }
+
+  /* ---------- table ---------- */
+  .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); font-size: 13px; min-width: 1820px; }
+  thead th {
+    position: sticky; top: 0; background: var(--surface-2); text-align: left; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--muted); font-weight: 600; padding: 10px 12px; border-bottom: 1px solid var(--border);
+    cursor: pointer; user-select: none; white-space: nowrap;
+  }
+  thead th:hover { color: var(--ink); }
+  thead th.sorted { color: var(--accent); }
+  thead th .arrow { font-size: 9px; margin-left: 3px; opacity: 0.6; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: middle; }
+  tbody tr:hover { background: var(--surface-2); }
+  tbody tr:last-child td { border-bottom: none; }
+  .opp-name { font-weight: 600; color: var(--ink); text-decoration: none; display: block; }
+  .opp-name:hover { color: var(--accent); text-decoration: underline; }
+  .acct-name { font-size: 12px; color: var(--muted); margin-top: 1px; }
+  .stage-text { font-size: 12px; color: var(--ink-2); }
+  .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .term-cell { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 12.5px; white-space: nowrap; }
+  .notes-cell { display: inline-block; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; color: var(--ink-2); }
+  .term-dates { color: var(--muted); font-size: 11px; display: block; margin-top: 1px; }
+  .flag-inferred { color: var(--gold); cursor: help; }
+  .flag-unknown { color: var(--muted); font-style: italic; font-family: var(--font-body); }
+
+  .chip { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 600; padding: 3px 9px; border-radius: 100px; white-space: nowrap; }
+  .chip .dot { width: 6px; height: 6px; border-radius: 50%; flex: none; }
+  .chip-good { background: var(--good-bg); color: var(--good); }
+  .chip-critical { background: var(--critical-bg); color: var(--critical); }
+  .chip-warning { background: var(--warning-bg); color: var(--warning); }
+  .chip-steady { background: var(--steady-bg); color: var(--steady); }
+  .chip-muted { background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); }
+  .chip-pp { background: transparent; color: var(--ink-2); border: 1px solid var(--border); font-weight: 500; }
+  .status-pill { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em; padding: 2px 7px; border-radius: 4px; font-weight: 600; }
+  .status-won { background: var(--good-bg); color: var(--good); }
+  .status-open { background: var(--surface-2); color: var(--ink-2); border: 1px solid var(--border); }
+
+  /* ---------- methodology ---------- */
+  .method-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; font-size: 13px; color: var(--ink-2); line-height: 1.65; }
+  .method-card h3 { font-family: var(--font-display); font-size: 15.5px; color: var(--ink); margin: 0 0 10px; font-weight: 600; }
+  .method-card ul { margin: 0; padding-left: 20px; }
+  .method-card li { margin-bottom: 8px; }
+  .method-card li:last-child { margin-bottom: 0; }
+  .method-card code { font-family: var(--font-mono); font-size: 12px; background: var(--surface); padding: 1px 5px; border-radius: 4px; border: 1px solid var(--border); }
+  .method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  footer.credit { text-align: center; font-size: 11.5px; color: var(--muted); margin-top: 40px; font-family: var(--font-mono); }
+
+  @media (max-width: 1000px) {
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+    .method-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <p class="eyebrow">Renewal Opportunities · Salesforce</p>
+      <h1>AIM: Renewal Terms</h1>
+      <p>Tracking whether Renewal Opportunities are converting client contract terms from single-year (&lt;24 mo) to multi-year (&ge;24 mo) commitments, or the reverse — comparing each opportunity's originating contract term to its currently quoted or booked term. Renewal Opportunities in Salesforce are created 12 months before contract expiration.</p>
+    </div>
+    <div class="masthead-meta">
+      <button id="refreshBtn" class="refresh-btn">↻ Refresh from Salesforce</button>
+      <div id="refreshStatus" class="refresh-status">Snapshot generated Aug 18, 2026</div>
+      <div id="fiscalWindowLabel">Fiscal window: <b>FQ3 FY27 – FQ2 FY28</b><br>Close date range: <b>Aug 1, 2026 – Jul 31, 2027</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section class="block">
+    <div class="kpis" id="kpiBand"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Conversion mix, by Year 1 ACV</h2>
+    <p class="section-sub">129 Renewal Opportunities in the window, excluding Closed Lost. Bar length is Year 1 ACV; deal counts at right.</p>
+    <div class="chart-card">
+      <div id="chartRows"></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Renewal Opportunity detail</h2>
+    <p class="section-sub">Click a column header to sort. Use the filters to narrow by conversion direction, deal status, or account health.</p>
+
+    <div class="filter-bar">
+      <div class="filter-group">
+        <span class="filter-group-label">Direction</span>
+        <div id="dirFilters"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-group-label">Status</span>
+        <div id="statusFilters"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-group-label">Account health</span>
+        <div id="healthFilters"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-group-label">Fiscal quarter</span>
+        <div id="fqFilters"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-group-label">Owner</span>
+        <select class="search-input" id="ownerFilter">
+          <option value="">All owners</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <input class="search-input" id="searchBox" type="text" placeholder="Search account or opportunity…">
+      </div>
+      <button class="reset-link" id="resetBtn">Reset filters</button>
+    </div>
+
+    <p class="result-count" id="resultCount"></p>
+
+    <div class="table-scroll">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th data-key="name">Opportunity</th>
+            <th data-key="stage">Stage / Status</th>
+            <th data-key="owner">Owner</th>
+            <th data-key="close">Close date</th>
+            <th data-key="rAcv">Renewal</th>
+            <th data-key="nAcv">Net New</th>
+            <th data-key="health">Account health</th>
+            <th data-key="pp">Pricing &amp; packaging</th>
+            <th data-key="aiMaturity">AI Maturity</th>
+            <th data-key="aiExposure">Degreed.AI Exposure</th>
+            <th data-key="aiAssessed">AI Maturity Last Assessed</th>
+            <th data-key="aiNotes">AI Maturity Notes</th>
+            <th data-key="oTerm">Original term</th>
+            <th data-key="nTerm">New / quoted term</th>
+            <th data-key="dir">Direction</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="method-card">
+      <h3>Methodology &amp; data notes</h3>
+      <div class="method-grid">
+        <ul>
+          <li><b>Population:</b> Opportunities with Record Type <code>Renewals</code> and Close Date between Aug 1, 2026 and Jul 31, 2027 (current fiscal quarter through three quarters out; FY runs Feb 1–Jan 31). Closed Lost opportunities are excluded — 135 matched the window, 6 Closed Lost removed, 129 shown here.</li>
+          <li><b>Original term:</b> <code>Contract.ContractTerm</code> (months) on the contract each renewal opportunity points back to via <code>Opportunity.ContractId</code>. All 129 opportunities in this window resolved a direct contract link — no account/date inference was needed here, though that fallback is not always available outside this window (org-wide, only ~35% of closed renewals carry a direct contract link).</li>
+          <li><b>New / quoted term:</b> earliest start to latest end date across recurring line items on the opportunity's primary quote (or most recently modified quote, if none is flagged primary) — 125 of 129 rows. Falls back to the opportunity's own term-length field for 2 rows, and is unresolved for 2 early-stage Discovery opportunities with no dated quote yet (marked <span class="flag-unknown">unknown</span>).</li>
+        </ul>
+        <ul>
+          <li><b>Classification:</b> &lt;24 months = Single-Year, &ge;24 months = Multi-Year, applied identically to both the original and new term.</li>
+          <li><b>Dollar figures</b> use <code>Opportunity.Year_1_ACV__c</code> — the first year's annualized value of the renewal, not total contract value across the new term. The table splits this into its two underlying columns, <code>Renewal_ACV__c</code> (the renewing portion, "Renewal") and <code>Net_New_ACV__c</code> (upsell/expansion added at renewal, "Net New"). The "Total Renewal ACV" figure at the top sums <code>Renewal_ACV__c</code> only, excluding net new.</li>
+          <li><b>Status:</b> Closed Won opportunities reflect a confirmed outcome; Open Pipeline opportunities reflect the currently quoted term and can still change before close.</li>
+          <li><b>Account Health</b> is <code>Account.Pulse__c</code> (CX-submitted); <b>Pricing &amp; Packaging</b> is <code>Account.New_Pricing_Packaging_Status__c</code>. Both are read as of today and are not specific to the renewal term.</li>
+          <li><b>AI Maturity</b>, <b>Degreed.AI Exposure</b>, <b>AI Maturity Last Assessed</b>, and <b>AI Maturity Notes</b> are read from the related Account (<code>Account.AI_Maturity__c</code>, <code>Account.Degreed_AI_Exposure__c</code>, <code>Account.AI_Maturity_Last_Assessed__c</code>, <code>Account.AI_Maturity_Notes__c</code>), not the opportunity itself, and are not specific to the renewal term.</li>
+          <li><b>Fiscal quarter</b> filter groups rows by the fiscal quarter of their Close Date (FY runs Feb 1–Jan 31, e.g. Aug–Oct 2026 is FQ3 FY27); <b>Owner</b> filters to a single opportunity owner.</li>
+          <li>This is a forward-looking snapshot, not a historical trend — 125 of 129 rows are still open pipeline, so quoted terms can change before these opportunities close.</li>
+          <li><b>Refresh from Salesforce</b> re-runs the query pipeline through the Salesforce connector under Degreed Internal MCP and recomputes the fiscal window from today's date, so it stays current quarter-over-quarter. It requires that connector to be added under claude.ai Settings → Connectors for whoever is viewing the page.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="credit">Source: Salesforce · Opportunity, Contract, Quote, QuoteLineItem, Account</footer>
+</div>
+
+<script>
+let DATA = [{"id":"006PJ00000Lu0J0YAJ","name":"Paul Hartmann AG — 00000919","acct":"Paul Hartmann AG","owner":"Richard Dawson","stage":"6 - Closed Won","status":"Closed Won","close":"2026-08-05","y1":78699,"rAcv":78699,"nAcv":0,"health":"No Known Risk","pp":"Positioned - Declined","cNum":"00001710","oTerm":12,"oStart":"2026-08-01","oEnd":"2027-07-31","oClass":"Single-Year","nTerm":12,"nStart":"2026-08-01","nEnd":"2027-07-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000R50j1YAB","name":"Allstate - Expiring Renewal - Contract #00001111","acct":"Allstate","owner":"Angela Dobosz","stage":"6 - Closed Won","status":"Closed Won","close":"2026-08-06","y1":1231880,"rAcv":1144000,"nAcv":87880,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001709","oTerm":12,"oStart":"2026-08-06","oEnd":"2027-08-05","oClass":"Single-Year","nTerm":12,"nStart":"2026-08-06","nEnd":"2027-08-05","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000OVO8JYAX","name":"CAAT Pension Plan — 00001358","acct":"CAAT Pension Plan","owner":"Chayce Maday","stage":"6 - Closed Won","status":"Closed Won","close":"2026-08-13","y1":120081,"rAcv":104428,"nAcv":15653,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001711","oTerm":12,"oStart":"2026-09-30","oEnd":"2027-09-29","oClass":"Single-Year","nTerm":12,"nStart":"2026-09-30","nEnd":"2027-09-29","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000NPoilYAD","name":"State Street — 00001075","acct":"State Street","owner":"Patrick Marchand","stage":"5 - Contract","status":"Open Pipeline","close":"2026-08-21","y1":699400,"rAcv":699400,"nAcv":0,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001075","oTerm":38,"oStart":"2023-06-30","oEnd":"2026-08-29","oClass":"Multi-Year","nTerm":12,"nStart":"2026-08-30","nEnd":"2027-08-29","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000NPoijYAD","name":"Nielsen Expiring Renewal","acct":"Nielsen","owner":"Trisha Aldrich","stage":"4 - Negotiate","status":"Open Pipeline","close":"2026-08-30","y1":85000,"rAcv":85000,"nAcv":0,"health":"High Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001119","oTerm":36,"oStart":"2023-08-30","oEnd":"2026-08-29","oClass":"Multi-Year","nTerm":12,"nStart":"2026-08-30","nEnd":"2027-08-29","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000NPoikYAD","name":"Capital Group Early Renewal -  - 00001384","acct":"Capital Group","owner":"Kari McClure","stage":"6 - Closed Won","status":"Closed Won","close":"2026-08-30","y1":314500,"rAcv":270068,"nAcv":44432,"health":"No Known Risk","pp":"Closed - Re-Papered","cNum":"00001648","oTerm":36,"oStart":"2026-08-30","oEnd":"2029-08-29","oClass":"Multi-Year","nTerm":36,"nStart":"2026-08-30","nEnd":"2029-08-29","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000NSyATYA1","name":"Boehringer Ingelheim — 00000910","acct":"Boehringer Ingelheim","owner":"Sarah Knobloch","stage":"3 - Propose","status":"Open Pipeline","close":"2026-09-01","y1":1152000,"rAcv":1066008,"nAcv":85992,"health":"Some/Elevated Risk","pp":"Not Positioned","cNum":"00000910","oTerm":45,"oStart":"2022-11-15","oEnd":"2026-08-14","oClass":"Multi-Year","nTerm":36,"nStart":"2026-09-01","nEnd":"2029-08-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Ni0WvYAJ","name":"Allegis Group — 00001121","acct":"Allegis Group","owner":"Steve Cornell","stage":"4 - Negotiate","status":"Open Pipeline","close":"2026-09-08","y1":483326,"rAcv":460320,"nAcv":23006,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001121","oTerm":36,"oStart":"2023-09-08","oEnd":"2026-09-07","oClass":"Multi-Year","nTerm":36,"nStart":"2026-09-08","nEnd":"2029-09-07","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Rrf8xYAB","name":"Swisscom Renewal / RfP: \u0027AI-Driven-Learning Platform\u0027 - 00001615","acct":"Swisscom","owner":"Bodo Arnold","stage":"4 - Negotiate","status":"Open Pipeline","close":"2026-09-09","y1":807000,"rAcv":442366,"nAcv":364634,"health":"Some/Elevated Risk","pp":"Not Set","cNum":"00001615","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":36,"nStart":"2027-01-01","nEnd":"2029-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"Single -\u003e Multi"},{"id":"006PJ00000O2e3cYAB","name":"Cadence Design Systems — 00001357","acct":"Cadence Design Systems","owner":"Pat Minor","stage":"5 - Contract","status":"Open Pipeline","close":"2026-09-17","y1":239660,"rAcv":228275,"nAcv":11385,"health":"High Risk","pp":"Not Positioned","cNum":"00001357","oTerm":24,"oStart":"2024-09-17","oEnd":"2026-09-16","oClass":"Multi-Year","nTerm":12,"nStart":"2026-09-18","nEnd":"2027-09-17","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000O2e3dYAB","name":"CDM Smith — 00001148","acct":"CDM Smith","owner":"Kari McClure","stage":"4 - Negotiate","status":"Open Pipeline","close":"2026-09-17","y1":208000,"rAcv":170876,"nAcv":37124,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001148","oTerm":36,"oStart":"2023-09-17","oEnd":"2026-09-16","oClass":"Multi-Year","nTerm":36,"nStart":"2026-09-17","nEnd":"2029-09-16","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000OB58GYAT","name":"AECOM Maestro Expansion","acct":"AECOM","owner":"Ryan Legassick","stage":"2 - Validate","status":"Open Pipeline","close":"2026-09-20","y1":25000,"rAcv":25000,"nAcv":0,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001579","oTerm":12,"oStart":"2025-09-20","oEnd":"2026-09-19","oClass":"Single-Year","nTerm":24,"nStart":"2026-09-20","nEnd":"2028-09-19","nClass":"Multi-Year","src":"quote-line-items","dir":"Single -\u003e Multi"},{"id":"006PJ00000OVO8IYAX","name":"BD — 00001162","acct":"BD","owner":"Kari McClure","stage":"1 - Discovery","status":"Open Pipeline","close":"2026-09-30","y1":276000,"rAcv":276000,"nAcv":0,"health":"Churning","pp":"Positioned - No Opportunity Yet","cNum":"00001162","oTerm":36,"oStart":"2023-09-30","oEnd":"2026-09-29","oClass":"Multi-Year","nTerm":36,"nStart":"2026-09-30","nEnd":"2029-09-29","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000RdDidYAF","name":"Intuit - Expiring Renewal - #00001401","acct":"Intuit","owner":"Trisha Aldrich","stage":"4 - Negotiate","status":"Open Pipeline","close":"2026-09-30","y1":371110,"rAcv":371110,"nAcv":0,"health":"High Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001401","oTerm":24,"oStart":"2024-10-01","oEnd":"2026-09-30","oClass":"Multi-Year","nTerm":12,"nStart":"2026-09-30","nEnd":"2027-09-29","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000YxlCGYAZ","name":"Siemens Healthineers - Upsell - 2 months extension - Contract #00000307","acct":"Siemens Healthineers","owner":"Romain Marseille","stage":"2 - Validate","status":"Open Pipeline","close":"2026-09-30","y1":136704,"rAcv":136704,"nAcv":0,"health":"Churning","pp":"Not Positioned","cNum":"00001693","oTerm":1,"oStart":"2026-10-01","oEnd":"2026-10-31","oClass":"Single-Year","nTerm":2,"nStart":"2026-11-01","nEnd":"2026-12-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000OY8F7YAL","name":"KPMG — 00001405","acct":"KPMG","owner":"Felipe Vellinho","stage":"4 - Negotiate","status":"Open Pipeline","close":"2026-10-01","y1":1246064,"rAcv":1161806,"nAcv":84258,"health":"Some/Elevated Risk","pp":"Positioned - Declined","cNum":"00001405","oTerm":24,"oStart":"2024-10-20","oEnd":"2026-10-19","oClass":"Multi-Year","nTerm":12,"nStart":"2026-10-01","nEnd":"2027-09-30","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000RdMPJYA3","name":"Siemens Healthineers - Expiring Renewal - #00000307","acct":"Siemens Healthineers","owner":"Romain Marseille","stage":"1 - Discovery","status":"Open Pipeline","close":"2026-10-01","y1":0,"rAcv":0,"nAcv":0,"health":"Churning","pp":"Not Positioned","cNum":"00000307","oTerm":60,"oStart":"2021-10-01","oEnd":"2026-09-30","oClass":"Multi-Year","nTerm":35,"nStart":null,"nEnd":null,"nClass":"Multi-Year","src":"opportunity-field","dir":"No Change (Multi)"},{"id":"006PJ00000TN2tHYAT","name":"Visa Repaper \u0026 Maestro","acct":"Visa","owner":"Carrie McCullagh","stage":"3 - Propose","status":"Open Pipeline","close":"2026-10-01","y1":632600,"rAcv":437600,"nAcv":195000,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001498","oTerm":24,"oStart":"2025-01-31","oEnd":"2027-01-30","oClass":"Multi-Year","nTerm":12,"nStart":"2026-10-01","nEnd":"2027-09-30","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000Ws84bYAB","name":"Bayer Global — 00001677","acct":"Bayer Global","owner":"Ricky Patel","stage":"1 - Discovery","status":"Open Pipeline","close":"2026-10-01","y1":0,"rAcv":0,"nAcv":0,"health":"High Risk","pp":"Not Set","cNum":"00001677","oTerm":2,"oStart":"2026-08-01","oEnd":"2026-09-30","oClass":"Single-Year","nTerm":null,"nStart":null,"nEnd":null,"nClass":"Unknown","src":"unknown","dir":"Unknown"},{"id":"006PJ00000OhxJzYAJ","name":"Austin ASTD — 00001180","acct":"Austin ASTD","owner":"Sarah Bass Blanco","stage":"1 - Discovery","status":"Open Pipeline","close":"2026-10-05","y1":0,"rAcv":0,"nAcv":0,"health":"No Known Risk","pp":"Not Positioned","cNum":"00001180","oTerm":36,"oStart":"2023-10-05","oEnd":"2026-10-04","oClass":"Multi-Year","nTerm":36,"nStart":"2026-10-05","nEnd":"2029-10-04","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000P80VvYAJ","name":"General Motors — 00001182","acct":"General Motors","owner":"Patrick Marchand","stage":"4 - Negotiate","status":"Open Pipeline","close":"2026-10-16","y1":629334,"rAcv":629334,"nAcv":0,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001182","oTerm":36,"oStart":"2023-10-16","oEnd":"2026-10-15","oClass":"Multi-Year","nTerm":12,"nStart":"2026-10-16","nEnd":"2027-10-15","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000PPSFeYAP","name":"Sendero — 00001406","acct":"Sendero","owner":"Chayce Maday","stage":"5 - Contract","status":"Open Pipeline","close":"2026-10-23","y1":35392,"rAcv":28148,"nAcv":7244,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001406","oTerm":24,"oStart":"2024-10-23","oEnd":"2026-10-22","oClass":"Multi-Year","nTerm":12,"nStart":"2026-10-23","nEnd":"2027-10-22","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000QEVcrYAH","name":"HubSpot — 00001592","acct":"HubSpot","owner":"Chayce Maday","stage":"1 - Discovery","status":"Open Pipeline","close":"2026-10-23","y1":30000,"rAcv":30000,"nAcv":0,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001592","oTerm":12,"oStart":"2025-10-23","oEnd":"2026-10-22","oClass":"Single-Year","nTerm":12,"nStart":"2026-10-23","nEnd":"2027-10-22","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000PioltYAB","name":"National Bank of Canada — 00001187","acct":"National Bank of Canada","owner":"Phil Pote","stage":"4 - Negotiate","status":"Open Pipeline","close":"2026-10-30","y1":555170,"rAcv":539000,"nAcv":16170,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001187","oTerm":36,"oStart":"2023-10-31","oEnd":"2026-10-30","oClass":"Multi-Year","nTerm":36,"nStart":"2026-11-01","nEnd":"2029-10-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Soy2TYAR","name":"Itaú Unibanco — 00001638","acct":"Itaú Unibanco","owner":"Angelica Goldenberg","stage":"3 - Propose","status":"Open Pipeline","close":"2026-10-30","y1":2899,"rAcv":2476,"nAcv":423,"health":"Some/Elevated Risk","pp":"Not Positioned","cNum":"00001638","oTerm":12,"oStart":"2025-10-30","oEnd":"2026-10-29","oClass":"Single-Year","nTerm":12,"nStart":"2026-11-02","nEnd":"2027-11-01","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000PgGefYAF","name":"Allegis Group Expiring Maestro Renewal -  - 00001595","acct":"Allegis Group","owner":"Steve Cornell","stage":"3 - Propose","status":"Open Pipeline","close":"2026-10-31","y1":100000,"rAcv":100000,"nAcv":0,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001595","oTerm":12,"oStart":"2025-10-31","oEnd":"2026-10-30","oClass":"Single-Year","nTerm":12,"nStart":"2026-10-31","nEnd":"2027-10-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000PgGegYAF","name":"FBC Expiring Renewal","acct":"FBC","owner":"Ryan Legassick","stage":"2 - Validate","status":"Open Pipeline","close":"2026-10-31","y1":18290,"rAcv":18290,"nAcv":0,"health":"High Risk","pp":"Not Positioned","cNum":"00001151","oTerm":36,"oStart":"2023-10-31","oEnd":"2026-10-30","oClass":"Multi-Year","nTerm":36,"nStart":"2026-10-31","nEnd":"2029-10-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000PjEbWYAV","name":"AbbVie — 00001599","acct":"AbbVie","owner":"Taylor Smart","stage":"5 - Contract","status":"Open Pipeline","close":"2026-10-31","y1":162250,"rAcv":145000,"nAcv":17250,"health":"No Known Risk","pp":"Not Set","cNum":"00001599","oTerm":12,"oStart":"2025-10-31","oEnd":"2026-10-30","oClass":"Single-Year","nTerm":12,"nStart":"2026-10-31","nEnd":"2027-10-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000PioluYAB","name":"Cambridge Associates — 00001179","acct":"Cambridge Associates","owner":"Kari McClure","stage":"5 - Contract","status":"Open Pipeline","close":"2026-11-01","y1":98672,"rAcv":95798,"nAcv":2874,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001179","oTerm":36,"oStart":"2023-11-01","oEnd":"2026-10-31","oClass":"Multi-Year","nTerm":12,"nStart":"2026-11-01","nEnd":"2027-10-31","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000PiolwYAB","name":"ZS — 00001591","acct":"ZS","owner":"Samyukta Natarajan","stage":"1 - Discovery","status":"Open Pipeline","close":"2026-11-01","y1":181200,"rAcv":181200,"nAcv":0,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001591","oTerm":12,"oStart":"2025-11-01","oEnd":"2026-10-31","oClass":"Single-Year","nTerm":12,"nStart":"2026-11-01","nEnd":"2027-10-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000QEVY1YAP","name":"Virtusa — 00001195","acct":"Virtusa","owner":"Samyukta Natarajan","stage":"5 - Contract","status":"Open Pipeline","close":"2026-11-14","y1":268800,"rAcv":256000,"nAcv":12800,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001195","oTerm":36,"oStart":"2023-11-14","oEnd":"2026-11-13","oClass":"Multi-Year","nTerm":36,"nStart":"2026-11-14","nEnd":"2029-11-13","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000RdLrSYAV","name":"dunnhumby - Expiring Renewal - #00000121","acct":"dunnhumby","owner":"Iris Jonkers","stage":"3 - Propose","status":"Open Pipeline","close":"2026-11-15","y1":158515,"rAcv":149030,"nAcv":9485,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00000121","oTerm":60,"oStart":"2021-11-15","oEnd":"2026-11-14","oClass":"Multi-Year","nTerm":36,"nStart":"2026-11-15","nEnd":"2029-11-14","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Pco73YAB","name":"CRH — 00001156","acct":"CRH","owner":"Venessa Parker","stage":"4 - Negotiate","status":"Open Pipeline","close":"2026-11-24","y1":1155000,"rAcv":442467,"nAcv":712533,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001156","oTerm":36,"oStart":"2023-11-24","oEnd":"2026-11-23","oClass":"Multi-Year","nTerm":36,"nStart":"2026-11-24","nEnd":"2029-11-23","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000QrBmLYAV","name":"Harvard Business Publishing — 00001411","acct":"Harvard Business Publishing","owner":"Sarah Bass Blanco","stage":"1 - Discovery","status":"Open Pipeline","close":"2026-11-30","y1":1150000,"rAcv":1150000,"nAcv":0,"health":"Churning","pp":"Not Positioned","cNum":"00001411","oTerm":24,"oStart":"2024-11-30","oEnd":"2026-11-29","oClass":"Multi-Year","nTerm":24,"nStart":"2026-11-30","nEnd":"2028-11-29","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000QrBmMYAV","name":"Uber — 00001439","acct":"Uber","owner":"Pat Minor","stage":"1 - Discovery","status":"Open Pipeline","close":"2026-11-30","y1":547830,"rAcv":521640,"nAcv":26190,"health":"High Risk","pp":"Not Positioned","cNum":"00001439","oTerm":24,"oStart":"2024-11-30","oEnd":"2026-11-29","oClass":"Multi-Year","nTerm":24,"nStart":"2026-11-30","nEnd":"2028-11-29","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000QsEqEYAV","name":"Texas instruments Expiring Renewal - Degreed Learning AI","acct":"Texas Instruments","owner":"Terance Booker","stage":"2 - Validate","status":"Open Pipeline","close":"2026-12-01","y1":300000,"rAcv":247500,"nAcv":52500,"health":"High Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001159","oTerm":36,"oStart":"2023-12-01","oEnd":"2026-11-30","oClass":"Multi-Year","nTerm":36,"nStart":"2026-12-01","nEnd":"2029-11-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000QsEqFYAV","name":"Groupe Credit Agricole — 00001196","acct":"Groupe Credit Agricole","owner":"Romain Marseille","stage":"1 - Discovery","status":"Open Pipeline","close":"2026-12-01","y1":755600,"rAcv":528437,"nAcv":227163,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001196","oTerm":36,"oStart":"2023-12-01","oEnd":"2026-11-30","oClass":"Multi-Year","nTerm":36,"nStart":"2026-12-01","nEnd":"2029-11-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000QsEqGYAV","name":"Harley Davidson Expiring Renewal - Degreed Learning AI","acct":"Harley Davidson","owner":"Terance Booker","stage":"1 - Discovery","status":"Open Pipeline","close":"2026-12-01","y1":77280,"rAcv":77280,"nAcv":0,"health":"Churning","pp":"Not Positioned","cNum":"00001604","oTerm":12,"oStart":"2025-12-01","oEnd":"2026-11-30","oClass":"Single-Year","nTerm":12,"nStart":"2026-12-01","nEnd":"2027-11-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000RdLTFYA3","name":"NASA Jet Propulsion Laboratory Expiring Renewal - Degreed Learning AI + Maestro","acct":"NASA Jet Propulsion Laboratory","owner":"Terance Booker","stage":"2 - Validate","status":"Open Pipeline","close":"2026-12-01","y1":252000,"rAcv":140000,"nAcv":112000,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001607","oTerm":12,"oStart":"2025-12-01","oEnd":"2026-11-30","oClass":"Single-Year","nTerm":12,"nStart":"2026-12-01","nEnd":"2027-11-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000Kn2bSYAR","name":"Nubank Expiring Renewal","acct":"Nubank","owner":"Angelica Goldenberg","stage":"2 - Validate","status":"Open Pipeline","close":"2026-12-06","y1":275000,"rAcv":175428,"nAcv":99572,"health":"High Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001437","oTerm":24,"oStart":"2024-12-06","oEnd":"2026-12-05","oClass":"Multi-Year","nTerm":24,"nStart":"2026-08-04","nEnd":"2028-08-03","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000R7URfYAN","name":"Kearney — 00001605","acct":"Kearney","owner":"Chayce Maday","stage":"2 - Validate","status":"Open Pipeline","close":"2026-12-08","y1":270537,"rAcv":257654,"nAcv":12883,"health":"Churning","pp":"Positioned - Opportunity In Progress","cNum":"00001605","oTerm":12,"oStart":"2025-12-08","oEnd":"2026-12-07","oClass":"Single-Year","nTerm":12,"nStart":"2026-12-08","nEnd":"2027-12-07","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000RdB7KYAV","name":"Tokopedia — 00001626","acct":"Tokopedia","owner":"Samyukta Natarajan","stage":"2 - Validate","status":"Open Pipeline","close":"2026-12-09","y1":114998,"rAcv":114998,"nAcv":0,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001626","oTerm":12,"oStart":"2025-12-09","oEnd":"2026-12-08","oClass":"Single-Year","nTerm":12,"nStart":"2026-12-09","nEnd":"2027-12-08","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000RM5xZYAT","name":"PointClickCare — 00000926","acct":"PointClickCare","owner":"Pat Minor","stage":"2 - Validate","status":"Open Pipeline","close":"2026-12-15","y1":324875,"rAcv":324875,"nAcv":0,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00000926","oTerm":48,"oStart":"2022-12-15","oEnd":"2026-12-14","oClass":"Multi-Year","nTerm":12,"nStart":"2026-12-15","nEnd":"2027-12-14","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000SruLhYAJ","name":"Alsea — 00001643","acct":"Alsea","owner":"Angelica Goldenberg","stage":"3 - Propose","status":"Open Pipeline","close":"2026-12-15","y1":117841,"rAcv":63900,"nAcv":53941,"health":"Some/Elevated Risk","pp":"Not Positioned","cNum":"00001643","oTerm":12,"oStart":"2026-12-15","oEnd":"2027-12-14","oClass":"Single-Year","nTerm":36,"nStart":"2026-08-04","nEnd":"2029-08-03","nClass":"Multi-Year","src":"quote-line-items","dir":"Single -\u003e Multi"},{"id":"006PJ00000PBfr3YAD","name":"Sebrae — 00001185","acct":"Sebrae","owner":"Sara Zinzani","stage":"2 - Validate","status":"Open Pipeline","close":"2026-12-17","y1":258625,"rAcv":227147,"nAcv":31478,"health":"High Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001185","oTerm":38,"oStart":"2023-10-17","oEnd":"2026-12-16","oClass":"Multi-Year","nTerm":36,"nStart":"2026-10-17","nEnd":"2029-10-16","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000RdLQ1YAN","name":"Boston Scientific — 00001623","acct":"Boston Scientific","owner":"Robert Kesler","stage":"1 - Discovery","status":"Open Pipeline","close":"2026-12-19","y1":120000,"rAcv":120000,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001623","oTerm":12,"oStart":"2025-12-19","oEnd":"2026-12-18","oClass":"Single-Year","nTerm":12,"nStart":"2026-12-19","nEnd":"2027-12-18","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000RY4L0YAL","name":"Cloudera — 00001600","acct":"Cloudera","owner":"Iris Jonkers","stage":"3 - Propose","status":"Open Pipeline","close":"2026-12-20","y1":25998,"rAcv":23346,"nAcv":2652,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001600","oTerm":12,"oStart":"2025-12-20","oEnd":"2026-12-19","oClass":"Single-Year","nTerm":24,"nStart":"2026-12-21","nEnd":"2028-12-20","nClass":"Multi-Year","src":"quote-line-items","dir":"Single -\u003e Multi"},{"id":"006PJ00000RpwX4YAJ","name":"BioNTech SE — 00001241","acct":"BioNTech SE","owner":"Venessa Parker","stage":"3 - Propose","status":"Open Pipeline","close":"2026-12-31","y1":300000,"rAcv":283382,"nAcv":16618,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001241","oTerm":36,"oStart":"2023-12-31","oEnd":"2026-12-30","oClass":"Multi-Year","nTerm":36,"nStart":"2026-12-31","nEnd":"2029-12-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000RpwX5YAJ","name":"Ameriprise Financial Expiring Renewal; 3 Year Degreed Learning AI + Premium Technical Support","acct":"Ameriprise Financial","owner":"Terance Booker","stage":"2 - Validate","status":"Open Pipeline","close":"2026-12-31","y1":747750,"rAcv":352500,"nAcv":395250,"health":"Some/Elevated Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001205","oTerm":36,"oStart":"2023-12-31","oEnd":"2026-12-30","oClass":"Multi-Year","nTerm":36,"nStart":"2026-12-31","nEnd":"2029-12-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000RpwX6YAJ","name":"Marsh \u0026 McLennan Companies — 00001221","acct":"Marsh \u0026 McLennan Companies","owner":"Felipe Vellinho","stage":"3 - Propose","status":"Open Pipeline","close":"2026-12-31","y1":821600,"rAcv":782400,"nAcv":39200,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001221","oTerm":36,"oStart":"2023-12-31","oEnd":"2026-12-30","oClass":"Multi-Year","nTerm":36,"nStart":"2026-12-31","nEnd":"2029-12-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000RpwX7YAJ","name":"Cencora — 00001226","acct":"Cencora","owner":"Felipe Vellinho","stage":"2 - Validate","status":"Open Pipeline","close":"2026-12-31","y1":1097840,"rAcv":1057890,"nAcv":39950,"health":"High Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001226","oTerm":36,"oStart":"2023-12-31","oEnd":"2026-12-30","oClass":"Multi-Year","nTerm":36,"nStart":"2026-12-31","nEnd":"2029-12-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Rrf95YAB","name":"Vitro Expiring Renewal + SCALE Project","acct":"Vitro America","owner":"Angelica Goldenberg","stage":"4 - Negotiate","status":"Open Pipeline","close":"2026-12-31","y1":251500,"rAcv":176258,"nAcv":75242,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001319","oTerm":32,"oStart":"2024-05-01","oEnd":"2026-12-31","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-01","nEnd":"2029-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000QEVWPYA5","name":"Genentech — 00001585","acct":"Genentech","owner":"Chayce Maday","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":186250,"rAcv":186250,"nAcv":0,"health":"Churning","pp":"Not Positioned","cNum":"00001585","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":12,"nStart":"2026-07-01","nEnd":"2027-06-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000Rrf8lYAB","name":"Boeing — 00001274","acct":"Boeing","owner":"Angela Dobosz","stage":"3 - Propose","status":"Open Pipeline","close":"2027-01-01","y1":2040280,"rAcv":1899842,"nAcv":140438,"health":"No Known Risk","pp":"Positioned - Declined","cNum":"00001274","oTerm":36,"oStart":"2024-01-01","oEnd":"2026-12-31","oClass":"Multi-Year","nTerm":24,"nStart":"2026-01-01","nEnd":"2027-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Rrf8mYAB","name":"Volkswagen Financial Services — 00001622","acct":"Volkswagen Financial Services","owner":"Bodo Arnold","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":99124,"rAcv":99124,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001622","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-01","nEnd":"2027-12-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000Rrf8nYAB","name":"BP — 00001459","acct":"BP","owner":"Romain Marseille","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":855000,"rAcv":760000,"nAcv":95000,"health":"No Known Risk","pp":"Not Positioned","cNum":"00001459","oTerm":24,"oStart":"2025-01-01","oEnd":"2026-12-31","oClass":"Multi-Year","nTerm":12,"nStart":"2027-01-01","nEnd":"2027-12-31","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000Rrf8pYAB","name":"International Motors, LLC — 00001234","acct":"International Motors, LLC","owner":"Bodo Arnold","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":64059,"rAcv":64059,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001234","oTerm":36,"oStart":"2024-01-01","oEnd":"2026-12-31","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-01","nEnd":"2029-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Rrf8qYAB","name":"Skoda Auto — 00001236","acct":"Skoda Auto","owner":"Bodo Arnold","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":75461,"rAcv":75461,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001236","oTerm":36,"oStart":"2024-01-01","oEnd":"2026-12-31","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-01","nEnd":"2029-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Rrf8sYAB","name":"Imperial Brands — 00001453","acct":"Imperial Brands","owner":"Richard Dawson","stage":"2 - Validate","status":"Open Pipeline","close":"2027-01-01","y1":297687,"rAcv":293812,"nAcv":3875,"health":"High Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001453","oTerm":24,"oStart":"2025-01-01","oEnd":"2026-12-31","oClass":"Multi-Year","nTerm":24,"nStart":"2027-01-01","nEnd":"2028-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Rrf8uYAB","name":"Pfizer Expiring Renewal - Academies/DDC - 00001610","acct":"Pfizer","owner":"Ryan Legassick","stage":"3 - Propose","status":"Open Pipeline","close":"2027-01-01","y1":198906,"rAcv":191271,"nAcv":7635,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001610","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-01","nEnd":"2027-12-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000Rrf8vYAB","name":"Yara — 00000584","acct":"Yara","owner":"Richard Dawson","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":595000,"rAcv":305532,"nAcv":289468,"health":"Some/Elevated Risk","pp":"Positioned - No Opportunity Yet","cNum":"00000584","oTerm":60,"oStart":"2022-01-01","oEnd":"2026-12-31","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-01","nEnd":"2029-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Rrf8wYAB","name":"MAN Truck \u0026 Bus — 00001235","acct":"MAN Truck \u0026 Bus","owner":"Bodo Arnold","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":93028,"rAcv":93028,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001235","oTerm":36,"oStart":"2024-01-01","oEnd":"2026-12-31","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-01","nEnd":"2029-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Rrf8yYAB","name":"West Monroe Partners — 00001621","acct":"West Monroe Partners","owner":"Ryan Legassick","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":3900,"rAcv":3900,"nAcv":0,"health":"Some/Elevated Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001621","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-01","nEnd":"2027-12-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000Rrf90YAB","name":"Olam Global Agri Pte Ltd — 00001618","acct":"Olam Global Agri Pte Ltd","owner":"Samyukta Natarajan","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":105000,"rAcv":105000,"nAcv":0,"health":"High Risk","pp":"Not Positioned","cNum":"00001618","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-01","nEnd":"2027-12-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000Rrf91YAB","name":"Audi — 00001232","acct":"Audi","owner":"Bodo Arnold","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":396313,"rAcv":396313,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001232","oTerm":36,"oStart":"2024-01-01","oEnd":"2026-12-31","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-01","nEnd":"2029-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Rrf92YAB","name":"Ford Motor Company — 00001617","acct":"Ford Motor Company","owner":"Patrick Marchand","stage":"3 - Propose","status":"Open Pipeline","close":"2027-01-01","y1":1330013,"rAcv":1141011,"nAcv":189001,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001617","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":36,"nStart":"2027-01-01","nEnd":"2029-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"Single -\u003e Multi"},{"id":"006PJ00000Rrf93YAB","name":"Scania CV — 00001237","acct":"Scania CV","owner":"Bodo Arnold","stage":"3 - Propose","status":"Open Pipeline","close":"2027-01-01","y1":386063,"rAcv":386063,"nAcv":0,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001237","oTerm":36,"oStart":"2024-01-01","oEnd":"2026-12-31","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-01","nEnd":"2029-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Rrf94YAB","name":"Volkswagen — 00001240","acct":"Volkswagen","owner":"Bodo Arnold","stage":"3 - Propose","status":"Open Pipeline","close":"2027-01-01","y1":640389,"rAcv":640389,"nAcv":0,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001240","oTerm":36,"oStart":"2024-01-01","oEnd":"2026-12-31","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-01","nEnd":"2029-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000SrF0nYAF","name":"Cariad — 00001642","acct":"Cariad","owner":"Bodo Arnold","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":56847,"rAcv":56847,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001642","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-01","nEnd":"2027-12-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000TNEKzYAP","name":"SEAT — 00001646","acct":"SEAT","owner":"Bodo Arnold","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":116453,"rAcv":116453,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001646","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-01","nEnd":"2027-12-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000TNIgIYAX","name":"Belong Health — 00001633","acct":"Belong Health","owner":"Sarah Bass Blanco","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":7500,"rAcv":7500,"nAcv":0,"health":"Not Set","pp":"Not Positioned","cNum":"00001633","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-01","nEnd":"2027-12-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000TNLELYA5","name":"Allianz — 00001634","acct":"Allianz","owner":"Bodo Arnold","stage":"5 - Contract","status":"Open Pipeline","close":"2027-01-01","y1":0,"rAcv":0,"nAcv":0,"health":"Churning","pp":"Not Set","cNum":"00001634","oTerm":6,"oStart":"2026-07-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-01","nEnd":"2027-12-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000TNLJBYA5","name":"Volkswagen de México, SA de CV — 00001651","acct":"Volkswagen de México, SA de CV","owner":"Bodo Arnold","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":57244,"rAcv":57244,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001651","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-01","nEnd":"2027-12-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000VfOkUYAV","name":"Anglo American — 00001630","acct":"Anglo American","owner":"Ricky Patel","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-01","y1":330000,"rAcv":330000,"nAcv":0,"health":"Some/Elevated Risk","pp":"Not Set","cNum":"00001630","oTerm":12,"oStart":"2026-01-01","oEnd":"2026-12-31","oClass":"Single-Year","nTerm":24,"nStart":"2027-01-01","nEnd":"2028-12-31","nClass":"Multi-Year","src":"quote-line-items","dir":"Single -\u003e Multi"},{"id":"006PJ00000TssXNYAZ","name":"Tata Motors — 00001157","acct":"Tata Motors","owner":"Samyukta Natarajan","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-09","y1":83738,"rAcv":83738,"nAcv":0,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001157","oTerm":36,"oStart":"2024-01-09","oEnd":"2027-01-08","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-09","nEnd":"2030-01-08","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000TsiwHYAR","name":"Kenvue — 00001242","acct":"Kenvue","owner":"Patricia Kramer","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-15","y1":720000,"rAcv":720000,"nAcv":0,"health":"High Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001242","oTerm":36,"oStart":"2024-01-15","oEnd":"2027-01-14","oClass":"Multi-Year","nTerm":12,"nStart":"2027-01-15","nEnd":"2028-01-14","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000TssabYAB","name":"West Monroe Partners — 00001253","acct":"West Monroe Partners","owner":"Ryan Legassick","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-22","y1":133710,"rAcv":133710,"nAcv":0,"health":"Some/Elevated Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001253","oTerm":36,"oStart":"2024-01-22","oEnd":"2027-01-21","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-22","nEnd":"2030-01-21","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000SjFytYAF","name":"Healthfirst — 00001170","acct":"Healthfirst","owner":"Trisha Aldrich","stage":"3 - Propose","status":"Open Pipeline","close":"2027-01-27","y1":220597,"rAcv":209625,"nAcv":10972,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001170","oTerm":39,"oStart":"2023-10-26","oEnd":"2027-01-25","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-27","nEnd":"2030-01-26","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Tl3xpYAB","name":"McKinsey - Expiring Renewal - #00001266","acct":"McKinsey \u0026 Company","owner":"Angela Dobosz","stage":"3 - Propose","status":"Open Pipeline","close":"2027-01-29","y1":945000,"rAcv":842000,"nAcv":103000,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001266","oTerm":36,"oStart":"2024-01-31","oEnd":"2027-01-30","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-30","nEnd":"2030-01-29","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000TNLFxYAP","name":"Banco Galicia — 00001644","acct":"Banco Galicia","owner":"Angelica Goldenberg","stage":"2 - Validate","status":"Open Pipeline","close":"2027-01-30","y1":338520,"rAcv":280972,"nAcv":57548,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001644","oTerm":12,"oStart":"2026-01-30","oEnd":"2027-01-29","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-30","nEnd":"2028-01-29","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000StvDqYAJ","name":"GSK — 00001608","acct":"GSK","owner":"Richard Dawson","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-31","y1":400000,"rAcv":400000,"nAcv":0,"health":"No Known Risk","pp":"Not Positioned","cNum":"00001608","oTerm":12,"oStart":"2026-01-31","oEnd":"2027-01-30","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-31","nEnd":"2028-01-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000StvDrYAJ","name":"Adecco Group — 00001383","acct":"Adecco Group","owner":"Romain Marseille","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-31","y1":823200,"rAcv":722050,"nAcv":101150,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001383","oTerm":32,"oStart":"2024-06-01","oEnd":"2027-01-31","oClass":"Multi-Year","nTerm":36,"nStart":"2027-02-01","nEnd":"2030-01-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000StvDsYAJ","name":"Chick-fil-A 1 Year Renewal Degreed Skills + Learning AI \u0026 Academies","acct":"Chick-fil-A","owner":"Terance Booker","stage":"2 - Validate","status":"Open Pipeline","close":"2027-01-31","y1":479058,"rAcv":339743,"nAcv":139315,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001636","oTerm":12,"oStart":"2026-01-31","oEnd":"2027-01-30","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-31","nEnd":"2028-01-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000StvDtYAJ","name":"Polaris — 00001589","acct":"Polaris","owner":"Chayce Maday","stage":"2 - Validate","status":"Open Pipeline","close":"2027-01-31","y1":9168,"rAcv":8335,"nAcv":832,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001589","oTerm":12,"oStart":"2026-01-31","oEnd":"2027-01-30","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-31","nEnd":"2028-01-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000TNLHZYA5","name":"ISSI - Insurance Support Services International Corp — 00001649","acct":"ISSI - Insurance Support Services International Corp","owner":"Luke Knowles","stage":"2 - Validate","status":"Open Pipeline","close":"2027-01-31","y1":13500,"rAcv":13500,"nAcv":0,"health":"Not Set","pp":"Not Set","cNum":"00001649","oTerm":12,"oStart":"2026-01-31","oEnd":"2027-01-30","oClass":"Single-Year","nTerm":12,"nStart":"2027-01-31","nEnd":"2028-01-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000TsiTDYAZ","name":"Bentley — 00001503","acct":"Bentley","owner":"Chayce Maday","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-31","y1":207024,"rAcv":175039,"nAcv":31985,"health":"High Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001503","oTerm":24,"oStart":"2025-01-31","oEnd":"2027-01-30","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-31","nEnd":"2030-01-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000TsookYAB","name":"Cigna — 00001267","acct":"Cigna","owner":"Pat Minor","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-31","y1":1097024,"rAcv":1067024,"nAcv":30000,"health":"Churning","pp":"Not Positioned","cNum":"00001267","oTerm":36,"oStart":"2024-01-31","oEnd":"2027-01-30","oClass":"Multi-Year","nTerm":36,"nStart":"2027-01-31","nEnd":"2030-01-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Tss4MYAR","name":"HubSpot — 00001508","acct":"HubSpot","owner":"Chayce Maday","stage":"3 - Propose","status":"Open Pipeline","close":"2027-01-31","y1":341614,"rAcv":297024,"nAcv":44590,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001508","oTerm":24,"oStart":"2025-01-31","oEnd":"2027-01-30","oClass":"Multi-Year","nTerm":12,"nStart":"2026-10-23","nEnd":"2027-10-22","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000TssYzYAJ","name":"La Prairie Group — 00001247","acct":"La Prairie Group","owner":"Venessa Parker","stage":"3 - Propose","status":"Open Pipeline","close":"2027-01-31","y1":45000,"rAcv":41111,"nAcv":3889,"health":"High Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001247","oTerm":36,"oStart":"2024-01-31","oEnd":"2027-01-30","oClass":"Multi-Year","nTerm":36,"nStart":"2027-02-01","nEnd":"2030-01-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000TssdpYAB","name":"Cartier — 00001446","acct":"Cartier","owner":"Tom Salveniac","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-01-31","y1":290000,"rAcv":290000,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001446","oTerm":24,"oStart":"2025-01-31","oEnd":"2027-01-30","oClass":"Multi-Year","nTerm":24,"nStart":"2027-01-31","nEnd":"2029-01-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000TshKEYAZ","name":"QuintoAndar — 00001201","acct":"QuintoAndar","owner":"Angelica Goldenberg","stage":"3 - Propose","status":"Open Pipeline","close":"2027-02-01","y1":173000,"rAcv":140999,"nAcv":32001,"health":"High Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001201","oTerm":36,"oStart":"2024-02-01","oEnd":"2027-01-31","oClass":"Multi-Year","nTerm":12,"nStart":"2027-02-02","nEnd":"2028-02-01","nClass":"Single-Year","src":"quote-line-items","dir":"Multi -\u003e Single"},{"id":"006PJ00000TssfRYAR","name":"Five9 — 00001207","acct":"Five9","owner":"Pat Minor","stage":"2 - Validate","status":"Open Pipeline","close":"2027-02-12","y1":162000,"rAcv":73953,"nAcv":88047,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001207","oTerm":36,"oStart":"2024-02-12","oEnd":"2027-02-11","oClass":"Multi-Year","nTerm":24,"nStart":"2027-02-12","nEnd":"2029-02-11","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000TssifYAB","name":"Tech-Moms — 00001281","acct":"Tech-Moms","owner":"Jen Collins","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-02-19","y1":0,"rAcv":0,"nAcv":0,"health":"Not Set","pp":"Not Positioned","cNum":"00001281","oTerm":36,"oStart":"2024-02-19","oEnd":"2027-02-18","oClass":"Multi-Year","nTerm":36,"nStart":"2027-02-19","nEnd":"2030-02-18","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000TsrZiYAJ","name":"Bank of Kigali — 00001279","acct":"Bank of Kigali","owner":"Sarah Knobloch","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-02-21","y1":34800,"rAcv":34800,"nAcv":0,"health":"Some/Elevated Risk","pp":"Not Positioned","cNum":"00001279","oTerm":36,"oStart":"2024-02-21","oEnd":"2027-02-20","oClass":"Multi-Year","nTerm":36,"nStart":"2027-02-21","nEnd":"2030-02-20","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000V3lGgYAJ","name":"Prosus Expiring Renewal - 2027","acct":"Prosus","owner":"George Bryant","stage":"2 - Validate","status":"Open Pipeline","close":"2027-02-28","y1":1091248,"rAcv":829526,"nAcv":261722,"health":"High Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001529","oTerm":24,"oStart":"2025-04-01","oEnd":"2027-03-31","oClass":"Multi-Year","nTerm":24,"nStart":"2027-04-01","nEnd":"2029-03-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000TvGs9YAF","name":"HSBC — 00001645","acct":"HSBC","owner":"Ricky Patel","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-03-01","y1":2022150,"rAcv":2022150,"nAcv":0,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001645","oTerm":12,"oStart":"2026-03-01","oEnd":"2027-02-28","oClass":"Single-Year","nTerm":12,"nStart":"2027-03-01","nEnd":"2028-02-29","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000TvGsAYAV","name":"Ambev - AB InBev — 00001289","acct":"Ambev - AB InBev","owner":"Sara Zinzani","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-03-01","y1":620344,"rAcv":607362,"nAcv":12982,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001289","oTerm":36,"oStart":"2024-03-01","oEnd":"2027-02-28","oClass":"Multi-Year","nTerm":36,"nStart":"2027-03-01","nEnd":"2030-02-28","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000ULd8LYAT","name":"MAN Truck \u0026 Bus — 00001655","acct":"MAN Truck \u0026 Bus","owner":"Bodo Arnold","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-03-01","y1":15593,"rAcv":15593,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001655","oTerm":12,"oStart":"2026-03-01","oEnd":"2027-02-28","oClass":"Single-Year","nTerm":12,"nStart":"2027-03-01","nEnd":"2028-02-29","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000TwLL8YAN","name":"Whirlpool — 00001287","acct":"Whirlpool","owner":"Pat Minor","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-03-02","y1":480000,"rAcv":208080,"nAcv":271920,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001287","oTerm":36,"oStart":"2024-03-02","oEnd":"2027-03-01","oClass":"Multi-Year","nTerm":36,"nStart":"2027-03-02","nEnd":"2030-03-01","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000UMcJtYAL","name":"Cobli — 00001254","acct":"Cobli","owner":"Sara Zinzani","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-03-13","y1":17009,"rAcv":17009,"nAcv":0,"health":"Some/Elevated Risk","pp":"Not Positioned","cNum":"00001254","oTerm":36,"oStart":"2024-03-13","oEnd":"2027-03-12","oClass":"Multi-Year","nTerm":36,"nStart":"2027-03-13","nEnd":"2030-03-12","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000UxQtGYAV","name":"TD Bank Group — 00001661","acct":"TD Bank Group","owner":"Pat Minor","stage":"2 - Validate","status":"Open Pipeline","close":"2027-03-29","y1":1000000,"rAcv":861642,"nAcv":138358,"health":"High Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001661","oTerm":12,"oStart":"2026-03-29","oEnd":"2027-03-28","oClass":"Single-Year","nTerm":24,"nStart":"2027-03-28","nEnd":"2029-03-27","nClass":"Multi-Year","src":"quote-line-items","dir":"Single -\u003e Multi"},{"id":"006PJ00000V0oXdYAJ","name":"Zendesk — 00001660","acct":"Zendesk","owner":"Kari McClure","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-03-31","y1":200908,"rAcv":200908,"nAcv":0,"health":"High Risk","pp":"Not Positioned","cNum":"00001660","oTerm":12,"oStart":"2026-03-31","oEnd":"2027-03-30","oClass":"Single-Year","nTerm":12,"nStart":"2027-03-31","nEnd":"2028-03-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000V3lGfYAJ","name":"PepsiCo — 00001292","acct":"PepsiCo","owner":"Pat Minor","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-04-01","y1":0,"rAcv":0,"nAcv":0,"health":"Churning","pp":"Not Set","cNum":"00001292","oTerm":36,"oStart":"2024-04-01","oEnd":"2027-03-31","oClass":"Multi-Year","nTerm":36,"nStart":"2027-04-01","nEnd":"2030-03-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000V3lGhYAJ","name":"ASN Bank N.V. — 00001637","acct":"ASN Bank N.V.","owner":"Iris Jonkers","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-04-01","y1":0,"rAcv":0,"nAcv":0,"health":"High Risk","pp":"Not Positioned","cNum":"00001637","oTerm":14,"oStart":"2026-01-30","oEnd":"2027-03-29","oClass":"Single-Year","nTerm":null,"nStart":null,"nEnd":null,"nClass":"Unknown","src":"unknown","dir":"Unknown"},{"id":"006PJ00000V3lGiYAJ","name":"Robert Bosch Engineering and Business Solutions — 00001553","acct":"Robert Bosch Engineering and Business Solutions","owner":"Samyukta Natarajan","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-04-01","y1":309000,"rAcv":309000,"nAcv":0,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001553","oTerm":24,"oStart":"2025-04-01","oEnd":"2027-03-31","oClass":"Multi-Year","nTerm":24,"nStart":"2027-04-01","nEnd":"2029-03-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000VKd3OYAT","name":"Aptia Group — 00001295","acct":"Aptia Group","owner":"Iris Jonkers","stage":"2 - Validate","status":"Open Pipeline","close":"2027-04-09","y1":200000,"rAcv":178520,"nAcv":21480,"health":"Some/Elevated Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001295","oTerm":36,"oStart":"2024-04-09","oEnd":"2027-04-08","oClass":"Multi-Year","nTerm":36,"nStart":"2027-04-10","nEnd":"2030-04-09","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000VQ4VyYAL","name":"Paradigm Consulting Group — 00000715","acct":"Paradigm Consulting Group","owner":"Chayce Maday","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-04-11","y1":31076,"rAcv":28255,"nAcv":2821,"health":"Some/Elevated Risk","pp":"Not Positioned","cNum":"00000715","oTerm":60,"oStart":"2022-04-11","oEnd":"2027-04-10","oClass":"Multi-Year","nTerm":36,"nStart":"2027-04-11","nEnd":"2030-04-10","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Vmm6vYAB","name":"Hitachi — 00001662","acct":"Hitachi","owner":"Luke Knowles","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-04-21","y1":691600,"rAcv":691600,"nAcv":0,"health":"Not Set","pp":"Positioned - Opportunity In Progress","cNum":"00001662","oTerm":12,"oStart":"2026-04-21","oEnd":"2027-04-20","oClass":"Single-Year","nTerm":12,"nStart":"2027-04-21","nEnd":"2028-04-20","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000VsOzbYAF","name":"Cielo Brazil — 00001307","acct":"Cielo Brazil","owner":"Angelica Goldenberg","stage":"2 - Validate","status":"Open Pipeline","close":"2027-04-23","y1":132029,"rAcv":132029,"nAcv":0,"health":"Some/Elevated Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001307","oTerm":36,"oStart":"2024-04-23","oEnd":"2027-04-22","oClass":"Multi-Year","nTerm":36,"nStart":"2027-04-23","nEnd":"2030-04-22","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000W977uYAB","name":"Quilter — 00001670","acct":"Quilter","owner":"Richard Dawson","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-04-30","y1":153488,"rAcv":153488,"nAcv":0,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001670","oTerm":12,"oStart":"2026-04-30","oEnd":"2027-04-29","oClass":"Single-Year","nTerm":12,"nStart":"2027-04-30","nEnd":"2028-04-29","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000W977vYAB","name":"The Economist — 00001665","acct":"The Economist","owner":"Iris Jonkers","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-04-30","y1":35880,"rAcv":35880,"nAcv":0,"health":"No Known Risk","pp":"Not Positioned","cNum":"00001665","oTerm":12,"oStart":"2026-04-30","oEnd":"2027-04-29","oClass":"Single-Year","nTerm":12,"nStart":"2027-04-30","nEnd":"2028-04-29","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000WC1QvYAL","name":"Zebra Technologies — 00001536","acct":"Zebra Technologies","owner":"Kari McClure","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-05-01","y1":257022,"rAcv":257022,"nAcv":0,"health":"High Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001536","oTerm":24,"oStart":"2025-05-01","oEnd":"2027-04-30","oClass":"Multi-Year","nTerm":24,"nStart":"2027-05-01","nEnd":"2029-04-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000WC1QwYAL","name":"Fidelity — 00001668","acct":"Fidelity","owner":"Carrie McCullagh","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-05-01","y1":886900,"rAcv":886900,"nAcv":0,"health":"High Risk","pp":"Not Positioned","cNum":"00001668","oTerm":12,"oStart":"2026-05-01","oEnd":"2027-04-30","oClass":"Single-Year","nTerm":12,"nStart":"2027-05-01","nEnd":"2028-04-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000WWmqIYAT","name":"National Bank of Canada — 00001675","acct":"National Bank of Canada","owner":"Phil Pote","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-05-11","y1":113250,"rAcv":113250,"nAcv":0,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001675","oTerm":12,"oStart":"2026-05-11","oEnd":"2027-05-10","oClass":"Single-Year","nTerm":12,"nStart":"2027-05-11","nEnd":"2028-05-10","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000X3K5dYAF","name":"Getz Healthcare — 00001543","acct":"Getz Healthcare","owner":"Samyukta Natarajan","stage":"1 - Recognizes Need","status":"Open Pipeline","close":"2027-05-26","y1":36400,"rAcv":36400,"nAcv":0,"health":"No Known Risk","pp":"Positioned - Declined","cNum":"00001543","oTerm":24,"oStart":"2025-05-26","oEnd":"2027-05-25","oClass":"Multi-Year","nTerm":24,"nStart":"2027-05-26","nEnd":"2029-05-25","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000JtZexYAF","name":"Chevron — 00001328","acct":"Chevron","owner":"Patrick Marchand","stage":"2 - Validate","status":"Open Pipeline","close":"2027-05-31","y1":740250,"rAcv":740250,"nAcv":0,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001328","oTerm":36,"oStart":"2024-05-31","oEnd":"2027-05-30","oClass":"Multi-Year","nTerm":36,"nStart":null,"nEnd":null,"nClass":"Multi-Year","src":"opportunity-field","dir":"No Change (Multi)"},{"id":"006PJ00000XGFCzYAP","name":"Danone — 00001652","acct":"Danone","owner":"Tom Salveniac","stage":"1 - Recognizes Need","status":"Open Pipeline","close":"2027-06-01","y1":8832,"rAcv":8832,"nAcv":0,"health":"No Known Risk","pp":"Not Set","cNum":"00001652","oTerm":12,"oStart":"2026-06-01","oEnd":"2027-05-31","oClass":"Single-Year","nTerm":12,"nStart":"2027-06-01","nEnd":"2028-05-31","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000XGFD0YAP","name":"Ericsson — 00001559","acct":"Ericsson","owner":"George Bryant","stage":"1 - Recognizes Need","status":"Open Pipeline","close":"2027-06-01","y1":956000,"rAcv":956000,"nAcv":0,"health":"Some/Elevated Risk","pp":"Not Positioned","cNum":"00001559","oTerm":24,"oStart":"2025-06-01","oEnd":"2027-05-31","oClass":"Multi-Year","nTerm":24,"nStart":"2027-06-01","nEnd":"2029-05-31","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000XL4C5YAL","name":"Memorial Sloan Kettering Cancer Center — 00001557","acct":"Memorial Sloan Kettering Cancer Center","owner":"Steve Cornell","stage":"1 - Recognizes Need","status":"Open Pipeline","close":"2027-06-03","y1":404440,"rAcv":404440,"nAcv":0,"health":"High Risk","pp":"Positioned - Declined","cNum":"00001557","oTerm":24,"oStart":"2025-06-03","oEnd":"2027-06-02","oClass":"Multi-Year","nTerm":24,"nStart":"2027-06-03","nEnd":"2029-06-02","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000XmFD3YAN","name":"Deutsche Bank — 00001332","acct":"Deutsche Bank","owner":"Sarah Knobloch","stage":"1 - Recognizes Need","status":"Open Pipeline","close":"2027-06-16","y1":841826,"rAcv":841826,"nAcv":0,"health":"No Known Risk","pp":"Not Positioned","cNum":"00001332","oTerm":36,"oStart":"2024-06-16","oEnd":"2027-06-15","oClass":"Multi-Year","nTerm":36,"nStart":"2027-06-16","nEnd":"2030-06-15","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000XxnEdYAJ","name":"Element Fleet Management Expiring Renewal - Degreed Skills + Learning AI","acct":"Element Fleet Management","owner":"Terance Booker","stage":"1 - Recognizes Need","status":"Open Pipeline","close":"2027-06-21","y1":210000,"rAcv":210000,"nAcv":0,"health":"No Known Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001335","oTerm":36,"oStart":"2024-06-21","oEnd":"2027-06-20","oClass":"Multi-Year","nTerm":48,"nStart":"2027-06-21","nEnd":"2031-06-20","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000XyrhZYAR","name":"AstraZeneca — 00001575","acct":"AstraZeneca","owner":"George Bryant","stage":"1 - Recognizes Need","status":"Open Pipeline","close":"2027-06-22","y1":1264800,"rAcv":1264800,"nAcv":0,"health":"Some/Elevated Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001575","oTerm":24,"oStart":"2025-06-22","oEnd":"2027-06-21","oClass":"Multi-Year","nTerm":24,"nStart":"2027-06-22","nEnd":"2029-06-21","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000Y0sXtYAJ","name":"Xcel Energy — 00001687","acct":"Xcel Energy","owner":"Ryan Legassick","stage":"1 - Recognizes Need","status":"Open Pipeline","close":"2027-06-23","y1":137500,"rAcv":137500,"nAcv":0,"health":"High Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001687","oTerm":12,"oStart":"2026-06-23","oEnd":"2027-06-22","oClass":"Single-Year","nTerm":12,"nStart":"2027-06-23","nEnd":"2028-06-22","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000YIrVLYA1","name":"Novo Nordisk — 00001334","acct":"Novo Nordisk","owner":"Romain Marseille","stage":"1 - Recognizes Need","status":"Open Pipeline","close":"2027-07-01","y1":1049488,"rAcv":1049488,"nAcv":0,"health":"High Risk","pp":"Not Positioned","cNum":"00001334","oTerm":36,"oStart":"2024-07-01","oEnd":"2027-06-30","oClass":"Multi-Year","nTerm":36,"nStart":"2027-07-01","nEnd":"2030-06-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000YbxiHYAR","name":"Colgate-Palmolive — 00001689","acct":"Colgate-Palmolive","owner":"Trisha Aldrich","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-07-10","y1":399556,"rAcv":399556,"nAcv":0,"health":"Some/Elevated Risk","pp":"Closed - Re-Papered","cNum":"00001689","oTerm":12,"oStart":"2026-07-10","oEnd":"2027-07-09","oClass":"Single-Year","nTerm":12,"nStart":"2027-07-10","nEnd":"2028-07-09","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000ZGHaGYAX","name":"Colt — 00001345","acct":"Colt","owner":"Iris Jonkers","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-07-29","y1":34800,"rAcv":34800,"nAcv":0,"health":"Some/Elevated Risk","pp":"Positioned - No Opportunity Yet","cNum":"00001345","oTerm":36,"oStart":"2024-07-29","oEnd":"2027-07-28","oClass":"Multi-Year","nTerm":36,"nStart":"2027-07-29","nEnd":"2030-07-28","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000YIrVMYA1","name":"Tenaris — 00001688","acct":"Tenaris","owner":"Sara Zinzani","stage":"1 - Recognizes Need","status":"Open Pipeline","close":"2027-07-31","y1":25000,"rAcv":25000,"nAcv":0,"health":"No Known Risk","pp":"Positioned - Opportunity In Progress","cNum":"00001688","oTerm":12,"oStart":"2026-07-31","oEnd":"2027-07-30","oClass":"Single-Year","nTerm":12,"nStart":"2027-07-01","nEnd":"2028-06-30","nClass":"Single-Year","src":"quote-line-items","dir":"No Change (Single)"},{"id":"006PJ00000ZM4YfYAL","name":"Sicredi Univales Mt/Ro — 00001385","acct":"Sicredi Univales Mt/Ro","owner":"Sara Zinzani","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-07-31","y1":65135,"rAcv":65135,"nAcv":0,"health":"Churning","pp":"Not Positioned","cNum":"00001385","oTerm":36,"oStart":"2024-07-31","oEnd":"2027-07-30","oClass":"Multi-Year","nTerm":36,"nStart":"2027-07-31","nEnd":"2030-07-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"},{"id":"006PJ00000ZM4YgYAL","name":"Transpetro — 00001344","acct":"Transpetro","owner":"Sara Zinzani","stage":"1 - Discovery","status":"Open Pipeline","close":"2027-07-31","y1":221725,"rAcv":221725,"nAcv":0,"health":"Some/Elevated Risk","pp":"Not Positioned","cNum":"00001344","oTerm":36,"oStart":"2024-07-31","oEnd":"2027-07-30","oClass":"Multi-Year","nTerm":36,"nStart":"2027-07-31","nEnd":"2030-07-30","nClass":"Multi-Year","src":"quote-line-items","dir":"No Change (Multi)"}];
+
+const DIRECTION_META = {
+  "Single -> Multi": { label: "Single → Multi", color: "good", icon: "↑" },
+  "Multi -> Single": { label: "Multi → Single", color: "critical", icon: "↓" },
+  "No Change (Multi)": { label: "Steady · Multi", color: "steady", icon: "→" },
+  "No Change (Single)": { label: "Steady · Single", color: "muted", icon: "→" },
+  "Unknown": { label: "Unknown", color: "muted", icon: "?" }
+};
+const HEALTH_META = {
+  "No Known Risk": "good",
+  "Satisfied": "good",
+  "Some/Elevated Risk": "warning",
+  "High Risk": "critical",
+  "Churning": "critical",
+  "Not Set": "muted"
+};
+
+function fmtMoney(n) {
+  if (n === null || n === undefined) return "—";
+  return "$" + Math.round(n).toLocaleString("en-US");
+}
+function fmtMoneyShort(n) {
+  if (n >= 1000000) return "$" + (n/1000000).toFixed(1) + "M";
+  if (n >= 1000) return "$" + (n/1000).toFixed(0) + "K";
+  return "$" + Math.round(n);
+}
+function chip(text, color, dotColorVar) {
+  return '<span class="chip chip-' + color + '"><span class="dot" style="background:var(--' + (dotColorVar||color) + ')"></span>' + text + '</span>';
+}
+function healthChip(h) {
+  const c = HEALTH_META[h] || "muted";
+  return chip(h, c);
+}
+function ppChip(p) {
+  return '<span class="chip chip-pp">' + p + '</span>';
+}
+function directionChip(d) {
+  const m = DIRECTION_META[d] || DIRECTION_META["Unknown"];
+  return chip(m.icon + " " + m.label, m.color);
+}
+function statusPill(s) {
+  return '<span class="status-pill ' + (s === "Closed Won" ? "status-won" : "status-open") + '">' + s + '</span>';
+}
+function moneyCell(n) {
+  if (n === null || n === undefined) return "—";
+  return fmtMoney(n);
+}
+const EXPOSURE_META = {
+  "Not Introduced": "muted",
+  "Introduced": "steady",
+  "Active Interest": "good"
+};
+function exposureChip(v) {
+  if (!v) return "—";
+  return chip(v, EXPOSURE_META[v] || "muted");
+}
+function maturityCell(n) {
+  if (n === null || n === undefined) return "—";
+  return Number.isInteger(n) ? String(n) : String(Math.round(n * 10) / 10);
+}
+function notesCell(n) {
+  if (!n) return "—";
+  const esc = String(n).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  return '<span class="notes-cell" title="' + esc + '">' + esc + '</span>';
+}
+function termCell(term, cls, start, end, source) {
+  if (term === null || term === undefined) {
+    return '<span class="flag-unknown">no data yet</span>';
+  }
+  const flag = source === "opportunity-field" ? '<span class="flag-inferred" title="Derived from opportunity term field, not quote line items">◆</span> ' : '';
+  const dates = (start && end) ? '<span class="term-dates">' + start + ' → ' + end + '</span>' : '';
+  return flag + term + ' mo · ' + cls + dates;
+}
+
+// ---------- KPI band ----------
+function renderKPIs() {
+  const total = DATA.length;
+  const totalRenewalAcv = DATA.reduce((s,r) => s + (r.rAcv||0), 0);
+  const beforeMulti = DATA.filter(r => r.oClass === "Multi-Year").length;
+  const afterMulti = DATA.filter(r => r.nClass === "Multi-Year").length;
+  const s2m = DATA.filter(r => r.dir === "Single -> Multi");
+  const m2s = DATA.filter(r => r.dir === "Multi -> Single");
+  const s2mAmt = s2m.reduce((s,r) => s + (r.y1||0), 0);
+  const m2sAmt = m2s.reduce((s,r) => s + (r.y1||0), 0);
+  const beforePct = Math.round(beforeMulti/total*100);
+  const afterPct = Math.round(afterMulti/total*100);
+  const deltaPct = afterPct - beforePct;
+
+  const kpis = [
+    { label: "Renewal opportunities", value: total, sub: "in fiscal window", cls: "" },
+    { label: "Total Renewal ACV", value: fmtMoneyShort(totalRenewalAcv), sub: totalRenewalAcv.toLocaleString("en-US", {style:"currency", currency:"USD", maximumFractionDigits:0}), cls: "" },
+    { label: "Multi-year mix", value: afterPct + "%", sub: beforePct + "% before → " + afterPct + "% after (<span class=\"" + (deltaPct<0?"delta-down":"delta-up") + "\">" + (deltaPct>=0?"+":"") + deltaPct + " pts</span>)", cls: "" },
+    { label: "Converting to multi-year", value: s2m.length, sub: fmtMoneyShort(s2mAmt) + " Year 1 ACV", cls: "accent-good" },
+    { label: "Converting to single-year", value: m2s.length, sub: fmtMoneyShort(m2sAmt) + " Year 1 ACV", cls: "accent-critical" }
+  ];
+  document.getElementById("kpiBand").innerHTML = kpis.map(k =>
+    '<div class="kpi ' + k.cls + '"><p class="kpi-label">' + k.label + '</p><p class="kpi-value">' + k.value + '</p><p class="kpi-sub">' + k.sub + '</p></div>'
+  ).join("");
+}
+
+// ---------- chart ----------
+function renderChart() {
+  const order = ["Single -> Multi", "No Change (Multi)", "No Change (Single)", "Multi -> Single", "Unknown"];
+  const rows = order.map(key => {
+    const items = DATA.filter(r => r.dir === key);
+    const amt = items.reduce((s,r) => s + (r.y1||0), 0);
+    return { key, items, amt };
+  }).filter(r => r.items.length > 0);
+  const maxAmt = Math.max(...rows.map(r => r.amt), 1);
+
+  document.getElementById("chartRows").innerHTML = rows.map(r => {
+    const m = DIRECTION_META[r.key];
+    const pct = Math.max(2, (r.amt / maxAmt) * 100);
+    return '<div class="bar-row">' +
+      '<div class="bar-label"><span class="bar-dot" style="background:var(--' + m.color + ')"></span>' + m.icon + ' ' + m.label + '</div>' +
+      '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%;background:var(--' + m.color + ')"></div></div>' +
+      '<div class="bar-figures"><b>' + fmtMoneyShort(r.amt) + '</b> · ' + r.items.length + ' deals</div>' +
+      '</div>';
+  }).join("");
+}
+
+// ---------- filters + table ----------
+let state = { dir: new Set(), status: new Set(), health: new Set(), fq: new Set(), owner: "", q: "", sortKey: "close", sortDir: 1 };
+
+function uniqueValues(key) {
+  return Array.from(new Set(DATA.map(r => r[key]))).filter(Boolean);
+}
+
+function rowFiscalQuarter(closeStr) {
+  if (!closeStr) return null;
+  const d = new Date(closeStr + "T00:00:00");
+  if (isNaN(d.getTime())) return null;
+  const fq = currentFiscalQuarter(d);
+  return { label: fyLabel(fq.fyYear, fq.qi), sortKey: fq.fyYear * 4 + fq.qi };
+}
+function uniqueFiscalQuarters() {
+  const map = new Map();
+  DATA.forEach(r => {
+    const fq = rowFiscalQuarter(r.close);
+    if (fq && !map.has(fq.label)) map.set(fq.label, fq.sortKey);
+  });
+  return Array.from(map.entries()).sort((a, b) => a[1] - b[1]).map(e => e[0]);
+}
+
+function renderFilterChips(containerId, values, stateSet, labelFn) {
+  const el = document.getElementById(containerId);
+  el.innerHTML = values.map(v => {
+    const active = stateSet.has(v) ? "active" : "";
+    return '<button class="chip-toggle ' + active + '" data-val="' + encodeURIComponent(v) + '">' + (labelFn ? labelFn(v) : v) + '</button>';
+  }).join("");
+  el.querySelectorAll(".chip-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const v = decodeURIComponent(btn.dataset.val);
+      if (stateSet.has(v)) stateSet.delete(v); else stateSet.add(v);
+      renderAll();
+    });
+  });
+}
+
+function applyFilters() {
+  return DATA.filter(r => {
+    if (state.dir.size && !state.dir.has(r.dir)) return false;
+    if (state.status.size && !state.status.has(r.status)) return false;
+    if (state.health.size && !state.health.has(r.health)) return false;
+    if (state.owner && r.owner !== state.owner) return false;
+    if (state.fq.size) {
+      const fq = rowFiscalQuarter(r.close);
+      if (!fq || !state.fq.has(fq.label)) return false;
+    }
+    if (state.q) {
+      const q = state.q.toLowerCase();
+      if (!r.acct.toLowerCase().includes(q) && !r.name.toLowerCase().includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function sortRows(rows) {
+  const key = state.sortKey, dir = state.sortDir;
+  return rows.slice().sort((a,b) => {
+    let av = a[key], bv = b[key];
+    if (av === null || av === undefined) av = -Infinity;
+    if (bv === null || bv === undefined) bv = -Infinity;
+    if (typeof av === "string") av = av.toLowerCase();
+    if (typeof bv === "string") bv = bv.toLowerCase();
+    if (av < bv) return -1 * dir;
+    if (av > bv) return 1 * dir;
+    return 0;
+  });
+}
+
+function renderTable() {
+  let rows = applyFilters();
+  document.getElementById("resultCount").innerHTML = "Showing <b>" + rows.length + "</b> of <b>" + DATA.length + "</b> renewal opportunities";
+  rows = sortRows(rows);
+  document.getElementById("tableBody").innerHTML = rows.map(r => {
+    const url = "https://degreed.lightning.force.com/lightning/r/Opportunity/" + r.id + "/view";
+    return "<tr>" +
+      "<td><a class=\"opp-name\" href=\"" + url + "\" target=\"_blank\" rel=\"noopener\">" + r.name + "</a><span class=\"acct-name\">" + r.acct + "</span></td>" +
+      "<td><span class=\"stage-text\">" + r.stage + "</span><br>" + statusPill(r.status) + "</td>" +
+      "<td>" + r.owner + "</td>" +
+      "<td class=\"num\">" + r.close + "</td>" +
+      "<td class=\"num\">" + moneyCell(r.rAcv) + "</td>" +
+      "<td class=\"num\">" + moneyCell(r.nAcv) + "</td>" +
+      "<td>" + healthChip(r.health) + "</td>" +
+      "<td>" + ppChip(r.pp) + "</td>" +
+      "<td class=\"num\">" + maturityCell(r.aiMaturity) + "</td>" +
+      "<td>" + exposureChip(r.aiExposure) + "</td>" +
+      "<td class=\"num\">" + (r.aiAssessed || "—") + "</td>" +
+      "<td>" + notesCell(r.aiNotes) + "</td>" +
+      "<td class=\"term-cell\">" + termCell(r.oTerm, r.oClass, r.oStart, r.oEnd, "contract") + "</td>" +
+      "<td class=\"term-cell\">" + termCell(r.nTerm, r.nClass, r.nStart, r.nEnd, r.src) + "</td>" +
+      "<td>" + directionChip(r.dir) + "</td>" +
+      "</tr>";
+  }).join("");
+}
+
+function renderSortHeaders() {
+  document.querySelectorAll("#dataTable thead th").forEach(th => {
+    th.classList.toggle("sorted", th.dataset.key === state.sortKey);
+    th.innerHTML = th.textContent.replace(/\s*[↑↓]$/, "") + (th.dataset.key === state.sortKey ? ('<span class="arrow">' + (state.sortDir === 1 ? "↑" : "↓") + '</span>') : "");
+  });
+}
+
+function renderOwnerFilter() {
+  const el = document.getElementById("ownerFilter");
+  const owners = uniqueValues("owner").sort();
+  el.innerHTML = '<option value="">All owners</option>' + owners.map(o =>
+    '<option value="' + encodeURIComponent(o) + '"' + (state.owner === o ? " selected" : "") + '>' + o + '</option>'
+  ).join("");
+}
+
+function renderAll() {
+  renderFilterChips("dirFilters", ["Single -> Multi","No Change (Multi)","No Change (Single)","Multi -> Single","Unknown"], state.dir, v => DIRECTION_META[v].icon + " " + DIRECTION_META[v].label);
+  renderFilterChips("statusFilters", ["Closed Won","Open Pipeline"], state.status);
+  renderFilterChips("healthFilters", ["No Known Risk","Some/Elevated Risk","High Risk","Churning","Not Set"], state.health);
+  renderFilterChips("fqFilters", uniqueFiscalQuarters(), state.fq);
+  renderOwnerFilter();
+  renderTable();
+  renderSortHeaders();
+}
+
+document.querySelectorAll("#dataTable thead th").forEach(th => {
+  th.addEventListener("click", () => {
+    const key = th.dataset.key;
+    if (state.sortKey === key) state.sortDir *= -1;
+    else { state.sortKey = key; state.sortDir = 1; }
+    renderAll();
+  });
+});
+document.getElementById("searchBox").addEventListener("input", (e) => { state.q = e.target.value; renderTable(); });
+document.getElementById("ownerFilter").addEventListener("change", (e) => {
+  state.owner = e.target.value ? decodeURIComponent(e.target.value) : "";
+  renderTable();
+});
+document.getElementById("resetBtn").addEventListener("click", () => {
+  state = { dir: new Set(), status: new Set(), health: new Set(), fq: new Set(), owner: "", q: "", sortKey: "close", sortDir: 1 };
+  document.getElementById("searchBox").value = "";
+  renderAll();
+});
+
+renderKPIs();
+renderChart();
+renderAll();
+
+// ---------- live refresh (Salesforce connector, Degreed Internal MCP) ----------
+const SERVER_NAME_HINT = /salesforce/i;
+const QUERY_TOOL_HINT = /soql|query records|query_records|queryrecords/i;
+
+function fiscalQuarterStart(fyYear, qi) {
+  const startMonth = [1, 4, 7, 10][qi]; // Feb, May, Aug, Nov (0-indexed)
+  return new Date(fyYear, startMonth, 1);
+}
+function fiscalQuarterEnd(fyYear, qi) {
+  const nextQ = qi === 3 ? { y: fyYear + 1, qi: 0 } : { y: fyYear, qi: qi + 1 };
+  const nextStart = fiscalQuarterStart(nextQ.y, nextQ.qi);
+  return new Date(nextStart.getTime() - 86400000);
+}
+function currentFiscalQuarter(today) {
+  const month = today.getMonth(); // 0-indexed
+  if (month === 0) return { fyYear: today.getFullYear() - 1, qi: 3 };
+  const fyYear = today.getFullYear();
+  const monthsSinceFeb = month - 1;
+  const qi = Math.min(3, Math.floor(monthsSinceFeb / 3));
+  return { fyYear, qi };
+}
+function isoDate(d) { return d.toISOString().slice(0, 10); }
+function fyLabel(fyYear, qi) {
+  // company convention: FY named for the calendar year it ENDS in (starts Feb fyYear -> ends Jan fyYear+1 -> "FY" + last two digits of fyYear+1)
+  const label = "FY" + String((fyYear + 1) % 100).padStart(2, "0");
+  return "FQ" + (qi + 1) + " " + label;
+}
+function computeFiscalWindow() {
+  const today = new Date();
+  const cur = currentFiscalQuarter(today);
+  const start = fiscalQuarterStart(cur.fyYear, cur.qi);
+  let endQ = cur.qi + 3, endY = cur.fyYear;
+  if (endQ > 3) { endY += Math.floor(endQ / 4); endQ = endQ % 4; }
+  const end = fiscalQuarterEnd(endY, endQ);
+  return {
+    startDate: isoDate(start), endDate: isoDate(end),
+    startLabel: fyLabel(cur.fyYear, cur.qi), endLabel: fyLabel(endY, endQ)
+  };
+}
+
+function monthsSpan(startStr, endStr) {
+  const s = new Date(startStr), e = new Date(endStr);
+  return Math.round((e - s) / 86400000 / 30.4368);
+}
+function classifyTerm(months) {
+  if (months === null || months === undefined) return "Unknown";
+  return months >= 24 ? "Multi-Year" : "Single-Year";
+}
+function normalizeHealth(h) {
+  if (!h) return "Not Set";
+  const t = h.trim().toLowerCase();
+  if (t === "no known risk") return "No Known Risk";
+  if (t === "some/elevated risk") return "Some/Elevated Risk";
+  if (t === "high risk") return "High Risk";
+  if (t === "churning") return "Churning";
+  if (t === "satisfied") return "Satisfied";
+  return h;
+}
+function directionFor(oClass, nClass) {
+  if (oClass === "Unknown" || nClass === "Unknown") return "Unknown";
+  if (oClass === "Single-Year" && nClass === "Multi-Year") return "Single -> Multi";
+  if (oClass === "Multi-Year" && nClass === "Single-Year") return "Multi -> Single";
+  if (oClass === "Single-Year" && nClass === "Single-Year") return "No Change (Single)";
+  return "No Change (Multi)";
+}
+function chunk(arr, size) {
+  const out = [];
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+  return out;
+}
+function idList(ids) { return ids.map(id => "'" + id.replace(/'/g, "") + "'").join(","); }
+
+function extractRecords(callResult) {
+  const p = callResult && callResult.payload;
+  if (!p) return [];
+  if (Array.isArray(p)) return p;
+  if (Array.isArray(p.records)) return p.records;
+  // some gateways may nest one level deeper
+  if (p.result && Array.isArray(p.result.records)) return p.result.records;
+  throw new Error("Unrecognized query result shape: " + JSON.stringify(p).slice(0, 300));
+}
+
+async function findQueryTool(mcp) {
+  const listed = await mcp.listTools();
+  const servers = listed.servers || [];
+  if (!servers.length) return { error: "server_not_connected" };
+
+  // The Salesforce connector may show up on its own, or nested under a
+  // broader "Degreed Internal MCP" gateway alongside unrelated tools (Zendesk,
+  // Gong, etc.) — so prefer a server whose name mentions Salesforce, but fall
+  // back to scanning every connected server for whichever one actually
+  // exposes a SOQL-style query tool.
+  const bySalesforceName = servers.filter(s => SERVER_NAME_HINT.test(s.server || ""));
+  const candidates = bySalesforceName.length ? bySalesforceName : servers;
+
+  for (const server of candidates) {
+    if (server.authStatus === "needs_reauth") continue;
+    const tool = (server.tools || []).find(t => QUERY_TOOL_HINT.test(t.name) || QUERY_TOOL_HINT.test(t.description || ""));
+    if (tool) return { serverName: server.server, toolName: tool.name };
+  }
+  const needsReauth = candidates.find(s => s.authStatus === "needs_reauth");
+  if (needsReauth) return { error: "needs_reauth", serverName: needsReauth.server };
+  return {
+    error: "tool_not_found",
+    available: candidates.flatMap(s => (s.tools || []).map(t => s.server + ": " + t.name))
+  };
+}
+
+async function runSoql(mcp, serverName, toolName, soql) {
+  try {
+    return await mcp.callTool(serverName, toolName, { query: soql }, { cache: false });
+  } catch (e) {
+    if (e && (e.code === "tool_error" || e.code === "bad_request")) {
+      // best-effort fallback: some gateways name the param "soql" (or "q") instead of "query"
+      try {
+        return await mcp.callTool(serverName, toolName, { soql: soql }, { cache: false });
+      } catch (e2) {
+        return await mcp.callTool(serverName, toolName, { q: soql }, { cache: false });
+      }
+    }
+    throw e;
+  }
+}
+
+async function refreshData() {
+  const btn = document.getElementById("refreshBtn");
+  const status = document.getElementById("refreshStatus");
+  btn.disabled = true;
+  status.className = "refresh-status";
+  status.textContent = "Connecting…";
+
+  const mcp = await claude.use("mcp").catch(() => null);
+  if (!mcp) {
+    status.className = "refresh-status is-error";
+    status.textContent = "Live refresh isn't available in this view — open this page in claude.ai.";
+    btn.disabled = false;
+    return;
+  }
+
+  let toolInfo;
+  try {
+    toolInfo = await findQueryTool(mcp);
+  } catch (e) {
+    status.className = "refresh-status is-error";
+    status.textContent = "Couldn't reach connectors: " + (e.message || e.code || "unknown error");
+    btn.disabled = false;
+    return;
+  }
+  if (toolInfo.error === "server_not_connected") {
+    status.className = "refresh-status is-error";
+    status.textContent = "Add the Salesforce connector (under Degreed Internal MCP) in claude.ai Settings → Connectors, then retry.";
+    btn.disabled = false;
+    return;
+  }
+  if (toolInfo.error === "needs_reauth") {
+    status.className = "refresh-status is-error";
+    status.textContent = "Reconnect \"" + (toolInfo.serverName || "Salesforce") + "\" in claude.ai Settings → Connectors, then retry.";
+    btn.disabled = false;
+    return;
+  }
+  if (toolInfo.error === "tool_not_found") {
+    status.className = "refresh-status is-error";
+    status.textContent = "No SOQL query tool found on the Salesforce connector. Available tools: " + toolInfo.available.join(", ");
+    btn.disabled = false;
+    return;
+  }
+
+  const serverName = toolInfo.serverName;
+  const toolName = toolInfo.toolName;
+  const win = computeFiscalWindow();
+
+  try {
+    status.textContent = "Querying renewal opportunities…";
+    const oppSoql = "SELECT Id, Name, StageName, IsClosed, IsWon, CloseDate, AccountId, Account.Name, " +
+      "Account.Pulse__c, Account.New_Pricing_Packaging_Status__c, " +
+      "Account.AI_Maturity__c, Account.Degreed_AI_Exposure__c, Account.AI_Maturity_Last_Assessed__c, Account.AI_Maturity_Notes__c, " +
+      "OwnerId, Owner.Name, ContractId, " +
+      "Year_1_ACV__c, Renewal_ACV__c, Net_New_ACV__c, Term_months__c, Contract_Term_Length_In_Months__c " +
+      "FROM Opportunity WHERE Opportunity_Record_Type_Name__c = 'Renewals' " +
+      "AND CloseDate >= " + win.startDate + " AND CloseDate <= " + win.endDate + " LIMIT 2000";
+    const oppResult = await runSoql(mcp, serverName, toolName, oppSoql);
+    const opps = extractRecords(oppResult).filter(o =>
+      o.StageName !== "7 - Closed Lost" && o.StageName !== "7 - Closed Lost - Unqualified");
+
+    if (opps.length === 0) {
+      status.className = "refresh-status is-ok";
+      status.textContent = "No renewal opportunities found in the current window.";
+      DATA = [];
+      renderKPIs(); renderChart(); renderAll();
+      btn.disabled = false;
+      return;
+    }
+
+    status.textContent = "Querying contracts and quotes…";
+    const contractIds = Array.from(new Set(opps.map(o => o.ContractId).filter(Boolean)));
+    const oppIds = opps.map(o => o.Id);
+
+    const contractById = {};
+    for (const batch of chunk(contractIds, 150)) {
+      if (!batch.length) continue;
+      const r = await runSoql(mcp, serverName, toolName,
+        "SELECT Id, ContractNumber, StartDate, EndDate, ContractTerm FROM Contract WHERE Id IN (" + idList(batch) + ") LIMIT 2000");
+      extractRecords(r).forEach(c => { contractById[c.Id] = c; });
+    }
+
+    const quotesByOpp = {};
+    for (const batch of chunk(oppIds, 150)) {
+      const r = await runSoql(mcp, serverName, toolName,
+        "SELECT Id, OpportunityId, Status, Is_Primary_Quote__c, LastModifiedDate FROM Quote WHERE OpportunityId IN (" + idList(batch) + ") LIMIT 2000");
+      extractRecords(r).forEach(q => {
+        (quotesByOpp[q.OpportunityId] = quotesByOpp[q.OpportunityId] || []).push(q);
+      });
+    }
+
+    const chosenQuoteByOpp = {};
+    Object.keys(quotesByOpp).forEach(oppId => {
+      const list = quotesByOpp[oppId];
+      const primary = list.find(q => q.Is_Primary_Quote__c === true);
+      if (primary) { chosenQuoteByOpp[oppId] = primary.Id; return; }
+      const mostRecent = list.slice().sort((a, b) => new Date(b.LastModifiedDate) - new Date(a.LastModifiedDate))[0];
+      if (mostRecent) chosenQuoteByOpp[oppId] = mostRecent.Id;
+    });
+
+    status.textContent = "Querying quote line items…";
+    const quoteIds = Object.values(chosenQuoteByOpp);
+    const qliByQuote = {};
+    for (const batch of chunk(quoteIds, 150)) {
+      if (!batch.length) continue;
+      const r = await runSoql(mcp, serverName, toolName,
+        "SELECT Id, QuoteId, Degreed_Start_Date__c, Degreed_End_Date__c, Recurring__c FROM QuoteLineItem WHERE QuoteId IN (" + idList(batch) + ") AND Recurring__c = true LIMIT 2000");
+      extractRecords(r).forEach(li => {
+        (qliByQuote[li.QuoteId] = qliByQuote[li.QuoteId] || []).push(li);
+      });
+    }
+
+    status.textContent = "Building report…";
+    const rows = opps.map(o => {
+      const contract = o.ContractId ? contractById[o.ContractId] : null;
+      const origTerm = contract ? contract.ContractTerm : null;
+      const quoteId = chosenQuoteByOpp[o.Id];
+      let newTerm = null, newStart = null, newEnd = null, src = "unknown";
+      const lineItems = quoteId ? (qliByQuote[quoteId] || []) : [];
+      const starts = lineItems.filter(li => li.Degreed_Start_Date__c).map(li => new Date(li.Degreed_Start_Date__c));
+      const ends = lineItems.filter(li => li.Degreed_End_Date__c).map(li => new Date(li.Degreed_End_Date__c));
+      if (starts.length && ends.length) {
+        const minStart = new Date(Math.min(...starts));
+        const maxEnd = new Date(Math.max(...ends));
+        newStart = isoDate(minStart); newEnd = isoDate(maxEnd);
+        newTerm = monthsSpan(newStart, newEnd);
+        src = "quote-line-items";
+      } else if (o.Term_months__c > 0) {
+        newTerm = o.Term_months__c; src = "opportunity-field";
+      } else if (o.Contract_Term_Length_In_Months__c > 0) {
+        newTerm = o.Contract_Term_Length_In_Months__c; src = "opportunity-field";
+      }
+      const oClass = classifyTerm(origTerm), nClass = classifyTerm(newTerm);
+      return {
+        id: o.Id,
+        name: (o.Name || "").replace(" Expiring Renewal -  - ", " — "),
+        acct: o.Account ? o.Account.Name : "",
+        owner: o.Owner ? o.Owner.Name : "",
+        stage: o.StageName,
+        status: o.IsWon ? "Closed Won" : "Open Pipeline",
+        close: o.CloseDate,
+        y1: o.Year_1_ACV__c !== undefined ? Math.round(o.Year_1_ACV__c) : null,
+        rAcv: o.Renewal_ACV__c !== undefined ? Math.round(o.Renewal_ACV__c) : null,
+        nAcv: o.Net_New_ACV__c !== undefined ? Math.round(o.Net_New_ACV__c) : null,
+        health: normalizeHealth(o.Account ? o.Account.Pulse__c : null),
+        pp: (o.Account && o.Account.New_Pricing_Packaging_Status__c) || "Not Set",
+        aiMaturity: (o.Account && o.Account.AI_Maturity__c != null) ? o.Account.AI_Maturity__c : null,
+        aiExposure: (o.Account && o.Account.Degreed_AI_Exposure__c) || null,
+        aiAssessed: (o.Account && o.Account.AI_Maturity_Last_Assessed__c) || null,
+        aiNotes: (o.Account && o.Account.AI_Maturity_Notes__c) || null,
+        cNum: contract ? contract.ContractNumber : null,
+        oTerm: origTerm,
+        oStart: contract ? contract.StartDate : null,
+        oEnd: contract ? contract.EndDate : null,
+        oClass: oClass,
+        nTerm: newTerm, nStart: newStart, nEnd: newEnd, nClass: nClass,
+        src: src,
+        dir: directionFor(oClass, nClass)
+      };
+    });
+
+    DATA = rows;
+    document.getElementById("fiscalWindowLabel").innerHTML =
+      "Fiscal window: <b>" + win.startLabel + " – " + win.endLabel + "</b><br>Close date range: <b>" +
+      new Date(win.startDate).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) + " – " +
+      new Date(win.endDate).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) + "</b>";
+    renderKPIs(); renderChart(); renderAll();
+
+    const now = new Date();
+    status.className = "refresh-status is-ok";
+    status.textContent = "Refreshed " + now.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " · " + rows.length + " opportunities";
+  } catch (e) {
+    status.className = "refresh-status is-error";
+    const code = e && e.code;
+    if (code === "not_in_manifest") {
+      status.textContent = "This page isn't scoped to call that tool — ask Claude to add it to the manifest.";
+    } else if (code === "blocked_by_policy") {
+      status.textContent = "Your organization's policy blocks this connector call.";
+    } else if (code === "approval_required") {
+      status.textContent = "This tool requires per-call approval, which isn't supported here yet.";
+    } else {
+      status.textContent = "Refresh failed: " + (e && e.message ? e.message : String(e));
+    }
+  }
+  btn.disabled = false;
+}
+
+document.getElementById("refreshBtn").addEventListener("click", refreshData);
+if (typeof claude === "undefined" || !claude || !claude.use) {
+  document.getElementById("refreshBtn").disabled = true;
+  document.getElementById("refreshStatus").textContent = "Live refresh requires viewing this page in claude.ai.";
+}
+</script>
+
