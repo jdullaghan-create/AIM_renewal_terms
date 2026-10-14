@@ -1,0 +1,26 @@
+{
+  "_comment": "Settings the Artifact tool needs when (re)publishing aim-renewal-terms.html. Without 'capabilities' the Refresh button and shared snapshot will not work.",
+  "title": "AIM: Renewal Terms",
+  "file": "aim-renewal-terms.html",
+  "description": "Renewal Opportunities converting client contract terms between single-year and multi-year, with HRIS + AI-layer threat and AI maturity signals.",
+  "icon": "chart",
+  "capabilities": {
+    "db": {},
+    "mcp": {
+      "servers": [
+        {
+          "server": "Degreed Internal MCP Gateway",
+          "tools": ["salesforce.soqlQuery", "salesforce__soqlQuery"]
+        },
+        {
+          "server": "Google Drive",
+          "tools": ["search_files", "download_file_content"]
+        }
+      ]
+    }
+  },
+  "db_collections": {
+    "snapshot/latest": "Refreshed opportunity rows ({rows, fiscalWindow, refreshedAt}). Written by the Refresh button; read by every viewer when newer than the baked data. Backup: db-backup/snapshot/latest.json",
+    "threat/latest": "Refreshed HRIS + AI-layer threat data. Was empty at hand-off; the page falls back to the THREAT_BAKED constant in the HTML."
+  }
+}
